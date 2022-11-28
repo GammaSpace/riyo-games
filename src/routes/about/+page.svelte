@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import { PUBLIC_DATO_TOKEN } from '$env/static/public';
   import { render as htmlRender } from 'datocms-structured-text-to-html-string';
+  import { loaded } from '../../stores';
 
   const token = PUBLIC_DATO_TOKEN;
 
@@ -10,7 +11,11 @@
 
   let img = {
     divider: "/img/about/divider.png",
+    timeRule: "/img/ui/time_rule.png",
     logo: "/img/logos/riyo_games_logo_586x288.png",
+    bio: {
+      placeholder: "/img/bios/profile_pic.png"
+    }
   }
 
   onMount( async ()=> {
@@ -57,7 +62,8 @@
     .then( ( res ) => {
       article = res.data.allAbouts[0];
       bios = res.data.allBios;
-      console.log( article );
+      //console.log( article );
+      loaded.set( true );
     })
     .catch( ( error ) => {
       console.log( error );
@@ -76,7 +82,7 @@
         <h1 class="w-full text-center mb-2">About</h1>  
         <img class="mx-auto mb-4" src={img.divider}/>
         <img class="mx-auto" src={img.logo} />
-        <div class="mt-4 text-textGray text-center">
+        <div class="mt-8 text-textGray text-center style-dato-st">
           { @html htmlRender( article.description ) }
         </div>
       </div>
@@ -89,22 +95,25 @@
       <div class="w-full lg:w-1/2 md:pr-[7%] pb-4">
         <h1>Our Vision</h1>
         <img src={img.divider}/>
-        <div class="py-4 text-textGray">
+        <div class="py-4 text-textGray style-dato-st">
           { @html htmlRender( article.vision ) }
         </div>
       </div>
       <div class="w-full lg:w-1/2 md:pr-[7%] pb-4">
         <h1>Our Values</h1>
         <img src={img.divider}/>
-        <div class="py-4 text-textGray">
+        <div class="py-4 text-textGray style-dato-st">
           { @html htmlRender( article.values ) }
         </div>
       </div>
       <div class="w-full">
         <hr class="md:w-[93%]"/>
         <h1>Careers At Riyo</h1>
-        <div class="py-4 flex text-textGray flex-wrap">
+        <div class="py-4 flex text-textGray flex-wrap style-dato-st">
           { @html htmlRender( article.workWithUs ) }
+          <form class="inline-block" action="/careers">
+            <a href="/careers"><button class="mt-2 btn-std w-[160px] p-2 border-2 text-charcoal border-textGray bg-beige hover:bg-midBeige uppercase">Work With Us</button></a>
+          </form>      
         </div>
         <hr class="md:w-[93%]"/>
       </div>
@@ -114,20 +123,23 @@
     <div class="w-full md:w-5/6 flex flex-wrap">
       <div class="w-full text-tan text-left flex flex-wrap">  
         <h1 class="w-full">Our Team</h1>
-        <hr class="w-full border-tan" />
-        <div class="w-1/2 flex flex-wrap">
-            { #each bios as bio }
-            <div class="w-1/3 py-4 font-menu">{ bio.name }</div> 
-            <div class="w-2/3 py-4 font-menu">
-              <h2 class="text-xl">{bio.name}</h2>
-              <h2 class="text-blue-400 pb-1">{bio.role}</h2>
-              <hr class="border-tan w-3/4"/>
-              <p class="pt-2">LV: { bio.level }<br /></p>
-              <p>HP: { bio.hp } <span class="text-gray-600">/9999</span></p>           
-            </div> 
-            { /each }
-        </div>
-        <div class="py-4 w-1/2">Current Bio</div>
+        <img class="mb-4" src={img.timeRule}/>
+        { #each bios as bio }
+          <div class="w-full flex flex-wrap">
+            <div class="w-full md:w-1/2 flex flex-wrap">
+              <div class="w-1/3 py-4 font-menu"><img class="pr-4" src={img.bio.placeholder}/></div> 
+              <div class="w-2/3 py-4 font-menu">
+                <h2 class="text-xl">{bio.name}</h2>
+                <h2 class="text-blue-400 pb-1">{bio.role}</h2>
+                <hr class="border-tan w-3/4"/>
+                <p class="pt-2">LV: { bio.level }<br /></p>
+                <p>HP: { bio.hp } <span class="text-gray-600">/9999</span></p>    
+              </div> 
+            </div>
+            <div class="py-4 w-full md:w-1/2 style-dato-st">{@html htmlRender( bio.bio)}</div>    
+          </div>
+          <hr class="ml-[16.6%] w-[83.3%] border-textGray mb-4" />
+        { /each }
       </div>
     </div>
   </div>

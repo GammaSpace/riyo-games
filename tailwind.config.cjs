@@ -10,7 +10,10 @@ module.exports = {
       colors: {
         beige: "#e3d7bb",
         tan: "#ede6d7",
+        darkBeige: "#b3a78b",
+        midBeige: "#d3c7ab",
         charcoal: "#1f1e1d",
+        lightCharcoal: "#5f5e5d",
         textGray: "#716c61",
       },
       backgroundImage: {

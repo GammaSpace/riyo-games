@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import { PUBLIC_DATO_TOKEN } from '$env/static/public';
   import { render as htmlRender } from 'datocms-structured-text-to-html-string';
+  import { loaded } from '../stores';
 
   const token = PUBLIC_DATO_TOKEN;
 
@@ -15,6 +16,8 @@
   let handActive = Array( homeLinks.length );
 
   let article = "";
+
+  console.log( loaded );
 
   onMount( async ()=> {
     fetch(
@@ -39,7 +42,7 @@
               additionalDescription {
                 value
               },
-              threadOfTimeIntro {
+              threadsOfTimeIntro {
                 value
               }
             }
@@ -50,7 +53,8 @@
     .then( res => res.json() )
     .then( ( res ) => {
       article = res.data.allHomepages[0];
-      console.log( article );
+      //console.log( article );
+      loaded.set( true );
     })
     .catch( ( error ) => {
       console.log( error );
@@ -89,7 +93,7 @@
   <div class="w-full mt-16 md:w-1/2">
     <img class="mb-8" src={img.logo} />
     <hr />
-    <div class="py-4 text-textGray">
+    <div class="pt-4 pb-2 text-textGray style-dato-st">
       { @html htmlRender( article.studioDescription ) }
     </div>
     <hr />
@@ -125,10 +129,10 @@
     </div>
     <div class="">
       <form class="inline-block p-4" action="/about">
-        <button class="btn-std w-[160px] p-2 bg-beige uppercase">Learn More</button>
+        <a href="/about"><button class="btn-std hover:bg-darkBeige w-[160px] p-2 bg-beige uppercase">Learn More</button></a>
       </form>
       <form class="inline-block" action="/careers">
-        <button class="btn-std w-[160px] p-2 bg-beige uppercase">Work With Us</button>
+        <a href="/careers"><button class="btn-std hover:bg-darkBeige w-[160px] p-2 bg-beige uppercase">Work With Us</button></a>
       </form>      
     </div>
   </div>
@@ -143,11 +147,11 @@
       <h2 class="pb-2">OUR GAMES</h2>
       <h2 class="pb-2 text-4xl">Threads of Time</h2>
       <hr />
-      <div class="pt-2 pb-4 text-textGray">
-        { @html htmlRender( article.threadOfTimeIntro ) }
+      <div class="pt-2 pb-4 text-textGray style-dato-st">
+        { @html htmlRender( article.threadsOfTimeIntro ) }
       </div>
       <form class="inline-block pb-4" action="/games">
-        <button class="btn-std py-2 px-6 bg-tan text-charcoal uppercase">Learn More</button>
+        <a href="/games"><button class="btn-std hover:bg-beige border-2 border-textGray py-2 px-6 bg-tan text-charcoal uppercase">Learn More</button></a>
       </form>
     </div>
   </div>

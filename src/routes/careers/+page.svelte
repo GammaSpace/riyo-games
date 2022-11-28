@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import { PUBLIC_DATO_TOKEN } from '$env/static/public';
   import { render as htmlRender } from 'datocms-structured-text-to-html-string';
+  import { loaded } from '../../stores';
 
   const token = PUBLIC_DATO_TOKEN;
 
@@ -31,6 +32,12 @@
               title,
               description {
                 value
+              },
+              diversityInclusion {
+                value
+              },
+              commitmentToImprovement {
+                value
               }
             }
           }`
@@ -41,6 +48,7 @@
     .then(  ( res ) => {
       article = res.data.allCareers[0];
       //console.log( article );
+      loaded.set( true );
     })
     .catch( ( err ) => {
       //console.log( err );
@@ -79,12 +87,28 @@
       <div class="w-full md:w-2/3 xl:w-3/4 pl-0 md:px-16">
         <h1>Careers</h1>
         <img src={img.divider}/>
-        <div class="text-textGray">{ @html htmlRender( article.description ) }</div>
+        <div class="text-textGray style-dato-st">{ @html htmlRender( article.description ) }</div>
       </div>
     </div>
   </div>
   <div class="relative flex flex-wrap p-8 justify-center items-center -mt-4">
     <div class="bg-careersBandMidBg bg-cover bg-no-repeat absolute w-full h-full">
+    </div>
+    <div class="z-10 w-full md:px-0 mt-16 mb-4 md:w-5/6 flex flex-wrap justify-center">
+      <div class="w-full lg:w-1/2 md:pr-[7%] pb-4">
+        <h1>Diversity &amp; Inclusion</h1>
+        <img src={img.divider}/>
+        <div class="py-4 text-textGray style-dato-st">
+          { @html htmlRender( article.diversityInclusion ) }
+        </div>
+      </div>
+      <div class="w-full lg:w-1/2 md:pr-[7%] pb-4">
+        <h1>Commitment to Improvement</h1>
+        <img src={img.divider}/>
+        <div class="py-4 text-textGray style-dato-st">
+          { @html htmlRender( article.commitmentToImprovement ) }
+        </div>
+      </div>
     </div>
     <div class="z-10 w-full md:px-0 my-8 md:w-5/6 flex flex-wrap justify-center ">
       <div class="w-full">
@@ -92,19 +116,24 @@
         <img src={img.divider}/>
         <div class="py-4 text-textGray">
           {#each positions as job, id }
-            <div class="my-2 px-4 py-2 bg-tan">
+            <div class="my-2 px-4 py-4 bg-beige">
               <div class="w-full relative flex flex-wrap justify-center items-center">
                 <h2 class="pb-2 md:pb-0 text-xl text-center md:text-left w-full md:w-[calc(100%-140px)] pr-4">{job.title}</h2>
-                <button 
-                  on:click={()=>toggleJob(id)}
-                  class="text-center w-[120px] md:w-[140px] h-[40px] bg-charcoal text-beige px-4 py-2">
-                  {posDom[id][1]}
-                </button>
+                <div class="w-full text-center md:w-auto">
+                  <button 
+                    on:click={()=>toggleJob(id)}
+                    class="uppercase my-2 md:my-0 font-menu text-center w-[120px] md:w-[140px] h-[40px] bg-charcoal text-beige px-4 py-2">
+                    {posDom[id][1]}
+                  </button>
+                </div>
               </div>
               <div bind:this={posDom[id][0]} class="max-h-0 overflow-y-hidden toggle-job">
                 <div class="style-job py-4">
                   {@html job.description}
                 </div>
+                <form class="inline-block pb-4" action="/about">
+                  <a href={job.applyUrl}><button class="uppercase font-menu text-center w-[120px] md:w-[140px] h-[40px] bg-charcoal text-lg text-beige py-2">Apply</button></a>
+                </form>
               </div>
             </div>
           {/each}          
