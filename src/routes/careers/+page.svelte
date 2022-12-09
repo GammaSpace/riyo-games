@@ -12,6 +12,7 @@
   let img = {
     divider: "/img/about/divider.png",
     logo: "/img/logos/riyo_games_logo_586x288.png",
+    timeRuleBeige: "/img/ui/time_rule_beige.png",
   }
 
   let posDom = Array();
@@ -92,7 +93,7 @@
     </div>
   </div>
   <div class="relative flex flex-wrap p-8 justify-center items-center -mt-4">
-    <div class="bg-careersBandMidBg bg-cover bg-no-repeat absolute w-full h-full">
+    <div class="bg-careersBandMidBg bg-top bg-tan bg-no-repeat absolute w-full h-full">
     </div>
     <div class="z-10 w-full md:px-0 mt-16 mb-4 md:w-5/6 flex flex-wrap justify-center">
       <div class="w-full lg:w-1/2 md:pr-[7%] pb-4">
@@ -113,7 +114,7 @@
     <div class="z-10 w-full md:px-0 my-8 md:w-5/6 flex flex-wrap justify-center ">
       <div class="w-full">
         <h1>Open Positions</h1>
-        <img src={img.divider}/>
+        <img class="mb-4 h-[18px] md:h-[22px] object-cover object-left" src={img.timeRuleBeige}/>
         <div class="py-4 text-textGray">
           {#each positions as job, id }
             <div class="my-2 px-4 py-4 bg-beige">

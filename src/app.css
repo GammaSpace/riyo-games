@@ -63,7 +63,7 @@ hr {
 }
 
 p, a {
-  @apply font-body text-sm leading-8;
+  @apply font-body text-sm leading-6 mb-4;
 }
 
 .header-fade {
@@ -75,7 +75,9 @@ p, a {
   mask-image: url("/img/home/about_band_mask_narrow.svg");
   mask-mode: luminance;
   -webkit-mask-mode: luminance;
-  mask-size: cover; 
+  mask-repeat: repeat-x;
+  -webkit-mask-repeat: repeat-x;
+  mask-size: cover;
   -webkit-mask-size: cover;
 }
 
@@ -138,11 +140,15 @@ p, a {
 }
 
 .style-dato-st ul p {
-  @apply mb-2
+  @apply mb-2;
+}
+
+.style-dato-header p {
+  @apply text-base;
 }
 
 .style-job p {
-  @apply font-body text-sm leading-8 ;
+  @apply font-body text-sm leading-6 ;
 }
 
 .style-job ul {
@@ -160,5 +166,25 @@ p, a {
 .style-job li::before{
   content: '\ffed';  
   @apply text-textGray pr-2;
+}
+
+.style-privacy p {
+  @apply mb-4 leading-6;
+}
+
+.style-privacy h2 {
+  @apply my-4 text-lg text-charcoal;
+}
+
+.style-privacy h3 {
+  @apply my-4 text-base text-charcoal;
+}
+
+.style-privacy li {
+  @apply font-body text-sm ml-8 list-disc leading-5;  
+}
+
+.style-privacy a {
+  @apply underline hover:cursor-pointer;
 }
 

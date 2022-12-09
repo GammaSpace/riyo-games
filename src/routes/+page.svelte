@@ -117,7 +117,7 @@
   <div class="bg-missionBandBg bg-center md:bg-cover bg-no-repeat absolute w-full h-full"></div>
   <div class="circle-mask absolute w-full h-full flex flex-wrap justify-center items-center overflow-hidden">
     <div class="absolute w-[130%] sm:w-[110%] md:w-[100%] lg:w-[90%] xl:w-[80%]">
-      <img style="transform: translate(0,{-yPos * 0.2}px)" class="mt-64 sm:mt-48 mx-auto" src={img.circle}/>
+      <img style="transform: translate(0,{-yPos * 0.1}px)" class="mt-64 sm:mt-48 mx-auto" src={img.circle}/>
     </div>
   </div>
   <div class="z-10 px-8 text-center w-full py-16 md:py-[16vw] 2xl:py-[15vw] md:w-2/3 xl:w-1/2">
@@ -140,7 +140,7 @@
 <div class="bg-totBandBg bg-center bg-cover bg-no-repeat p-8 flex flex-wrap pt-16 -mt-4 overflow-y-hidden overflow-x-hidden">
   <div class="relative w-full md:w-1/2 flex items-center pr-0 md:pr-20 xl:pr-24 ">
     <div class=""><img class="max-w-[130%] -ml-8" src={img.castle}></div>
-    <div class="absolute w-3/4 z-1 -ml-12 pt-[33rem] md:pt-[25rem] 2xl:pt-[28rem]"><img style="transform: translate(0,{-yPos * 0.2}px)" class="max-w-[140%]" src={img.tot}></div>
+    <div class="absolute w-3/4 z-1 -ml-12 pt-[27rem] md:pt-[20rem] 2xl:pt-[30rem]"><img style="transform: translate(0,{-yPos * 0.2}px)" class="max-w-[140%]" src={img.tot}></div>
   </div>
   <div class="z-10 w-full md:w-1/2 flex flex-wrap">
     <div class="w-full">

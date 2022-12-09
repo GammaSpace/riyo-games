@@ -7,6 +7,7 @@
   const token = PUBLIC_DATO_TOKEN;
 
   let article = "";
+  let ctas = "";
 
   let img = {
     divider: "/img/about/divider.png",
@@ -42,6 +43,12 @@
               inDevelopment {
                 value
               }
+            },
+            allCallToActions {
+              title,
+              cta {
+                value,
+              }
             }
           }`
         }),
@@ -49,7 +56,9 @@
     )
     .then( res => res.json() )
     .then( ( res ) => {
+      console.log( res );
       article = res.data.allGames[0];
+      ctas = res.data.allCallToActions;
       //console.log( article );
       loaded.set( true );
     })
@@ -71,7 +80,7 @@
         <img class="mx-auto mb-4 w-1/2" src={img.divider}/>
         <img class="mx-auto w-full md:w-[90%] xl:w-[80%]" src={img.totTitle} />
         <div class="flex flex-wrap justify-center items-center">
-        <div class="w-full md:w-2/3 xl:w-1/2 mt-8 text-textGray text-center style-dato-st">
+        <div class="w-full md:w-2/3 xl:w-1/2 mt-8 text-textGray text-center style-dato-header">
           { @html htmlRender( article.totDescription ) }
           </div>
         </div>
@@ -90,10 +99,10 @@
       </div>
     </div>
   </div>
-  <div class="mission-mask relative flex flex-wrap p-8 justify-center items-center -mt-4">
+  <div class="mission-mask relative flex flex-wrap p-8 justify-center items-center -mt-8 md:-mt-4">
     <div class="bg-careersBandMidBg bg-center bg-cover bg-no-repeat absolute w-full h-full">
     </div>
-    <div class="z-10 w-full md:px-0 mt-16 mb-8 md:w-5/6 flex flex-wrap justify-center">
+    <div class="z-10 w-full md:px-0 mt-12 mb-8 md:w-5/6 flex flex-wrap justify-center">
       <div class="w-full lg:w-1/2 md:pr-[7%] pb-4">
         <h1>About the Game</h1>
         <img src={img.divider}/>
@@ -109,9 +118,21 @@
         </div>
       </div>
     </div>
+    <div class="z-10 w-full md:px-0 my-8 md:w-5/6 flex flex-wrap justify-center">
+      <div class="w-full pb-4 text-textGray flex flex-wrap justify-center items-top">
+        { #each ctas as cta }
+          <div class="w-1/3 pr-4 mb-4">
+            <h2 class="font-menu text-charcoal">{ cta.title }</h2>
+            <div class="style-dato-st">  
+              { @html htmlRender( cta.cta ) }
+            </div>
+          </div>
+        { /each }
+      </div>
+    </div>
   </div>
-  <div class="bg-aboutBandBottomBg bg-center bg-cover bg-no-repeat p-8 flex flex-wrap pt-8 justify-center -mt-4">  
-    <div class="w-full md:w-5/6 my-8 flex flex-wrap">
+  <div class="bg-aboutBandBottomBg bg-center bg-cover bg-no-repeat p-8 flex flex-wrap pt-8 justify-center -mt-12 md:-mt-8">  
+    <div class="w-full mt-8 md:mt-12 md:w-5/6 my-8 flex flex-wrap">
       <div class="w-full text-tan text-left flex flex-wrap">  
         <h1 class="w-full text-center">CURRENTLY IN DEVELOPMENT</h1>
         <hr class="w-5/6 mx-auto border-tan" />
