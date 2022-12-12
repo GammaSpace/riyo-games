@@ -60,7 +60,10 @@
               hp,
               bio {
                 value
-              }
+              },
+              portrait {
+                url
+              },
             }
           }`
         }),
@@ -70,6 +73,7 @@
     .then( ( res ) => {
       article = res.data.allAbouts[0];
       bios = res.data.allBios;
+      console.log( bios );
       goPage( 0 );
       //console.log( article );
       loaded.set( true );
@@ -87,18 +91,18 @@
   $: pageDiv = winWidth <= 768 ? 1 : 2;
 
   function goPage( pg ) {
-    console.log( pg );
+    //console.log( pg );
     let newPage = Math.min( Math.max( pg, 0 ), Math.ceil( bios.length / pageDiv ) - 1 );
-    console.log( newPage );
+    //console.log( newPage );
 
     bioPage = newPage;
     let pageIndex = bioPage * pageDiv; 
-    console.log( bioPage )
-    curBios = pageDiv == 1 || pageIndex + 1 >= Math.ceil( bios.length / pageDiv ) ? [pageIndex] : [pageIndex, pageIndex + 1]
+    console.log( bioPage, pageIndex )
+    curBios = pageDiv == 1 || bioPage + 1 >= Math.ceil( bios.length / pageDiv ) ? [pageIndex] : [pageIndex, pageIndex + 1]
   }
 </script>
 
-<svelte:window bind:scrollY={yPos} bind:innerWidth={winWidth}/>
+<svelte:window bind:scrollY={yPos} bind:innerWidth={winWidth} on:resize={goPage(bioPage)}/>
 
 { #if article.title != undefined }
   <div class="bg-welcomeBandBg bg-cover bg-center bg-beige p-8 pb-12 flex flex-wrap pt-12 justify-center">  
@@ -107,7 +111,7 @@
         <h1 class="w-full text-center mb-2">About</h1>  
         <img class="mx-auto mb-4" src={img.divider}/>
         <img class="mx-auto" src={img.logo} />
-        <div class="mt-8 text-textGray text-center style-dato-st">
+        <div class="mt-8 text-textGray text-center style-dato-header">
           { @html htmlRender( article.description ) }
         </div>
       </div>
@@ -153,7 +157,7 @@
   <div class="bg-aboutBandBottomBg bg-charcoal g-top bg-no-repeat p-8 flex flex-wrap pt-20 justify-center -mt-12">  
     <div class="w-full md:w-5/6 flex flex-wrap">
       <div class="w-full relative text-tan text-left flex flex-wrap">  
-        <h1>Our Team</h1>
+        <h1 class="w-full">Our Team</h1>
         { #if bioPage > 0 }
           <span class="absolute right-12 top-[18px]" id="bio-page-btn" on:click={()=>goPage( bioPage - 1 )}><img class="-scale-x-100" src={img.mickey}/></span>
         { /if }
@@ -163,8 +167,10 @@
         <img class="mb-4 h-[22px] object-cover object-left" src={img.timeRule}/>
         { #each curBios as bio }
           <div class="w-full flex flex-wrap">
-            <div class="w-full md:w-1/2 flex flex-wrap">
-              <div class="w-1/3 py-4 font-menu"><img class="pr-4" src={img.bio.placeholder}/></div> 
+            <div class="w-full md:w-1/2 flex flex-wrap relative">
+              <div class="w-1/3 py-4 relative">
+                <div class="mr-4 bg-boxBlue"><img class="" src={bios[bio].portrait?.url}/></div> 
+              </div>
               <div class="w-2/3 py-4 font-menu">
                 <h2 class="text-xl">{bios[bio].name}</h2>
                 <h2 class="text-blue-400 pb-1">{bios[bio].role}</h2>

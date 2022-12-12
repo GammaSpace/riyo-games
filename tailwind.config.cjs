@@ -7,6 +7,13 @@ module.exports = {
         menu: [ "Quadraat", "Helvetica", "Arial" ],
         body: [ "Volkhov", "Helvetica", "Arial" ],
       },
+      fontSize: {
+        sm: ['14px', '20px'],
+        base: ['16px', '24px'],
+        md: ['18px', '28px'],
+        lg: ['20px', '30px'],
+        xl: ['24px', '32px'],
+      },
       colors: {
         beige: "#e3d7bb",
         tan: "#ede6d7",
@@ -15,6 +22,7 @@ module.exports = {
         charcoal: "#1f1e1d",
         lightCharcoal: "#5f5e5d",
         textGray: "#716c61",
+        boxBlue: "#0b93e7",
       },
       backgroundImage: {
         welcomeBandBg: "url('/img/home/welcome_band_background_better.jpg')",

@@ -124,7 +124,7 @@ p, a {
 }
 
 .style-dato-st p, .style-dato-st a {
-  @apply mb-4 leading-6;
+  @apply mb-4 leading-6 text-sm;
 }
 
 .style-dato-st a  {
@@ -143,8 +143,12 @@ p, a {
   @apply mb-2;
 }
 
-.style-dato-header p {
-  @apply text-base;
+.style-dato-header p, .style-dato-header a {
+  @apply text-md;
+}
+
+.style-dato-header a {
+  @apply underline 
 }
 
 .style-job p {
@@ -187,4 +191,13 @@ p, a {
 .style-privacy a {
   @apply underline hover:cursor-pointer;
 }
+
+.cls-1{
+  @apply fill-midBeige;
+} 
+
+.cls-2 {
+  @apply fill-[#7b6b48];
+}
+
 

@@ -89,11 +89,11 @@
 <svelte:window bind:scrollY={yPos}/>
 
 { #if article.title != undefined }
-<div class="bg-welcomeBandBg bg-cover bg-center p-8 pb-12 pt-16 flex flex-wrap pt-12 pb-16 md:pl-[10%]">
+<div class="bg-welcomeBandBg bg-cover bg-center p-8 pb-12 pt-16 flex flex-wrap pt-12 pb-24 md:pl-[10%]">
   <div class="w-full mt-16 md:w-1/2">
     <img class="mb-8" src={img.logo} />
     <hr />
-    <div class="pt-4 pb-2 text-textGray style-dato-st">
+    <div class="pt-4 pb-2 text-textGray style-dato-header">
       { @html htmlRender( article.studioDescription ) }
     </div>
     <hr />
@@ -104,7 +104,6 @@
         <span class="h-[40px] pt-2 inline-block uppercase text-lg">{ link[0] }</span>
         <hr class="w-1/3"/>
       </a>
-      
     </div>
     { /each }
   </div>
@@ -137,7 +136,7 @@
     </div>
   </div>
 </div>
-<div class="bg-totBandBg bg-center bg-cover bg-no-repeat p-8 flex flex-wrap pt-16 -mt-4 overflow-y-hidden overflow-x-hidden">
+<div class="bg-totBandBg bg-center bg-cover bg-no-repeat p-8 flex flex-wrap pt-16 md:pt-24 -mt-4 overflow-y-hidden overflow-x-hidden">
   <div class="relative w-full md:w-1/2 flex items-center pr-0 md:pr-20 xl:pr-24 ">
     <div class=""><img class="max-w-[130%] -ml-8" src={img.castle}></div>
     <div class="absolute w-3/4 z-1 -ml-12 pt-[27rem] md:pt-[20rem] 2xl:pt-[30rem]"><img style="transform: translate(0,{-yPos * 0.2}px)" class="max-w-[140%]" src={img.tot}></div>

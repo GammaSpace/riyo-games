@@ -60,7 +60,7 @@
       <div class="w-full md:w-2/3 xl:w-3/4 pl-0 md:px-16">
         <h1>Contact Us</h1>
         <img class="pb-4" src={img.divider}/>
-        <div class="text-textGray style-dato-st">{ @html htmlRender( article.description ) }</div>
+        <div class="text-textGray style-dato-header">{ @html htmlRender( article.description ) }</div>
       </div>
     </div>
   </div>
@@ -117,7 +117,7 @@
       </div>
         <div class="w-full md:w-1/2 mt-8 md:mt-0">
           <h1>Newsletter Signup</h1>
-          <form method="post" action="https://www.aweber.com/scripts/addlead.pl">
+          <form id="signup" method="post" action="https://www.aweber.com/scripts/addlead.pl">
             <input type="hidden" name="listname" value="awlist6157223" />
             <input type="hidden" name="redirect" value="http://www.example.com/thankyou.htm" />
             <input type="hidden" name="meta_redirect_onlist" value="http://www.example.com/thankyou.htm" />
@@ -139,7 +139,7 @@
               Email
             </label>
             <input type="text" class="mt-1 w-full text-sm p-1 rounded-md" name="email" value="" />
-            <input type="submit" class="mt-8 btn-std w-[160px] p-2 border-2 text-charcoal border-textGray bg-beige hover:bg-midBeige uppercase" name="submit" value="Subscribe" /> 
+            <input type="submit" class="mt-8 btn-std w-[160px] p-2 border-2 text-charcoal border-textGray bg-beige hover:bg-midBeige hover:cursor-pointer uppercase" name="submit" value="Subscribe" /> 
           </form>
       </div>
     </div>
