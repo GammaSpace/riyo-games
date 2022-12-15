@@ -8,6 +8,7 @@ module.exports = {
         body: [ "Volkhov", "Helvetica", "Arial" ],
       },
       fontSize: {
+        tiny: ['12px', '16px'],
         sm: ['14px', '20px'],
         base: ['16px', '24px'],
         md: ['18px', '28px'],
@@ -17,6 +18,7 @@ module.exports = {
       colors: {
         beige: "#e3d7bb",
         tan: "#ede6d7",
+        whiteTan: "#fffdf8",
         darkBeige: "#b3a78b",
         midBeige: "#d3c7ab",
         charcoal: "#1f1e1d",

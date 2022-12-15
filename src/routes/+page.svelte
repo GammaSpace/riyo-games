@@ -17,8 +17,6 @@
 
   let article = "";
 
-  console.log( loaded );
-
   onMount( async ()=> {
     fetch(
       'https://graphql.datocms.com/',
@@ -31,7 +29,7 @@
         },
         body: JSON.stringify({
           query: `{
-            allHomepages( filter: { title: { eq: "Home"} } ) {
+            homepage {
               title,
               studioDescription {
                 value
@@ -52,8 +50,7 @@
     )
     .then( res => res.json() )
     .then( ( res ) => {
-      article = res.data.allHomepages[0];
-      //console.log( article );
+      article = res.data.homepage;
       loaded.set( true );
     })
     .catch( ( error ) => {
@@ -73,10 +70,12 @@
     circle: "/img/home/mission_bg_circle.svg",
     tot: "/img/home/tot_band_title.png",
     castle: "img/home/tot_band_portal.png",
-    mickey: "/img/ui/nav_mickey_hand.png"
+    mickey: "/img/ui/nav_mickey_hand.png",
+    ruleOfLaw: "/img/ui/rule_of_law.png"
   }
 
   let yPos = 0;
+  let winWidth = 0;
 
   function handleMickey(id) {
     for ( let i = 0; i < handActive.length; i++ ) {
@@ -86,30 +85,39 @@
   }
 </script>
 
-<svelte:window bind:scrollY={yPos}/>
+<svelte:window bind:scrollY={yPos} bind:innerWidth={winWidth}/>
 
 { #if article.title != undefined }
 <div class="bg-welcomeBandBg bg-cover bg-center p-8 pb-12 pt-16 flex flex-wrap pt-12 pb-24 md:pl-[10%]">
   <div class="w-full mt-16 md:w-1/2">
     <img class="mb-8" src={img.logo} />
-    <hr />
-    <div class="pt-4 pb-2 text-textGray style-dato-header">
+    <!--hr class="-mt-12" /-->
+    <img class="-mt-12 h-[2px] object-left" src={img.ruleOfLaw}/>
+    <div class="pt-8 pb-4 text-textGray style-dato-header">
       { @html htmlRender( article.studioDescription ) }
     </div>
-    <hr />
-    { #each homeLinks as link, i }
-    <div class="pl-10 md:pl-0 relative">
-      <a bind:this={handActive[i][0]} on:mouseenter={()=>handleMickey(i)} on:mouseleave={()=>{handActive[i][1]=false}} href="{ link[1] }">
-        { #if handActive[i][1] }<div class="pt-2 absolute -left-0 md:-left-10 mickey-bounce inline-block w-[40px]"><img class="inline-block" src={img.mickey}/></div>{/if}
-        <span class="h-[40px] pt-2 inline-block uppercase text-lg">{ link[0] }</span>
-        <hr class="w-1/3"/>
-      </a>
+    <img class="mb-2 h-[2px] object-left" src={img.ruleOfLaw}/>
+    <div class="flex flex-wrap justify-center relative">
+      <div class="w-1/2 md:w-full">
+        { #each homeLinks as link, i }
+        <div class="">
+          <a bind:this={handActive[i][0]} on:mouseenter={()=>handleMickey(i)} on:mouseleave={()=>{handActive[i][1]=false}} href="{ link[1] }">
+            { #if handActive[i][1] }
+              <div class="pt-2 absolute mickey-bounce inline-block w-[40px]"><img class="inline-block" src={img.mickey}/></div>
+              <span class="h-[40px] pl-12 pt-2 inline-block uppercase text-lg">{ link[0] }</span>
+              { :else }
+              <span class="homepage-menu h-[40px] pt-2 inline-block uppercase text-lg">{ link[0] }</span>
+            {/if}
+            <img class="w-full md:w-1/3 my-1 h-[2px] object-left" src={img.ruleOfLaw}/>
+          </a>
+        </div>
+        { /each }
+      </div>
     </div>
-    { /each }
   </div>
   <div class="relative w-full md:w-1/2 flex justify-center items-center">
     <div class=""><img class="-mr-8 max-w-[140%] mt-8 md:mt-0 float-right" src={img.portal}></div>
-    <div class="absolute z-1 w-1/2 ml-48 md:ml-64 mt-64 md:mt-16 mr-48"><img style="transform: translate(0,{-yPos * 0.2}px)" class="max-w-[140%] overflow-x-hidden" src={img.hero}></div>
+    <div class="absolute z-1 w-1/2 ml-48 md:ml-64 mt-48 md:mt-16 mr-48"><img style="transform: translate(0,{ -yPos * ( winWidth > 768 ? 0.2 : 0.1 )}px)" class="max-w-[140%] overflow-x-hidden" src={img.hero}></div>
   </div>
 </div>
 <div class="mission-mask relative flex flex-wrap justify-center -mt-4 items-center">
@@ -136,10 +144,10 @@
     </div>
   </div>
 </div>
-<div class="bg-totBandBg bg-center bg-cover bg-no-repeat p-8 flex flex-wrap pt-16 md:pt-24 -mt-4 overflow-y-hidden overflow-x-hidden">
+<div class="bg-totBandBg bg-center bg-cover bg-no-repeat p-8 pb-16 flex flex-wrap pt-16 md:pt-24 -mt-4 overflow-y-hidden overflow-x-hidden">
   <div class="relative w-full md:w-1/2 flex items-center pr-0 md:pr-20 xl:pr-24 ">
     <div class=""><img class="max-w-[130%] -ml-8" src={img.castle}></div>
-    <div class="absolute w-3/4 z-1 -ml-12 pt-[27rem] md:pt-[20rem] 2xl:pt-[30rem]"><img style="transform: translate(0,{-yPos * 0.2}px)" class="max-w-[140%]" src={img.tot}></div>
+    <div class="absolute w-3/4 z-1 -ml-12 pt-[15rem] md:pt-[20rem] 2xl:pt-[30rem]"><img style="transform: translate(0,{ -yPos * ( winWidth > 768 ? 0.2 : 0.1 ) }px)" class="max-w-[140%]" src={img.tot}></div>
   </div>
   <div class="z-10 w-full md:w-1/2 flex flex-wrap">
     <div class="w-full">

@@ -81,6 +81,17 @@ p, a {
   -webkit-mask-size: cover;
 }
 
+.footer-mask {
+  -webkit-mask-image: url("/img/home/footer_mask.svg");
+  mask-image: url("/img/home/footer_mask.svg");
+  mask-mode: luminance;
+  -webkit-mask-mode: luminance;
+  mask-repeat: repeat-x;
+  -webkit-mask-repeat: repeat-x;
+  mask-size: cover;
+  -webkit-mask-size: cover;
+}
+
 .circle-mask {
   -webkit-mask-image: linear-gradient( 180deg, transparent, black, black, black, black, transparent);
   mask-image: linear-gradient( 180deg, transparent, black, black, black, black, transparent);
@@ -91,7 +102,7 @@ p, a {
 }
 
 .header-gradient {
-  background-image: linear-gradient( 180deg, rgba( 230, 230, 210, 1 ), rgba( 227, 215, 187, 0 ) );
+  background-image: linear-gradient( 180deg, rgba( 230, 230, 210, 1 ) 0%, rgba( 227, 215, 187, 1 ) 70%, rgba( 227, 215, 187, 0 ) 100% );
 }
 
 .btn-std {
@@ -200,4 +211,12 @@ p, a {
   @apply fill-[#7b6b48];
 }
 
+.homepage-menu:before {
+  @apply pr-2;
+  content: "\2B29";
+}
+
+.footer-gradient {
+  background-image: linear-gradient( 0deg, rgba( 179,167,139, 0.8 ), rgba( 179,167,139, 0 ) );
+}
 
