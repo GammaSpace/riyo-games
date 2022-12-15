@@ -102,7 +102,7 @@ p, a {
 }
 
 .header-gradient {
-  background-image: linear-gradient( 180deg, rgba( 230, 230, 210, 1 ) 0%, rgba( 227, 215, 187, 1 ) 70%, rgba( 227, 215, 187, 0 ) 100% );
+  background-image: linear-gradient( 180deg, rgba( 230, 230, 210, 1 ) 0%, rgba( 227, 215, 187, 1 ) 75%, rgba( 227, 215, 187, 0 ) 100% );
 }
 
 .btn-std {
@@ -167,11 +167,7 @@ p, a {
 }
 
 .style-job ul {
-  @apply list-disc text-textGray;  
-}
-
-.style-job ol {
-  @apply list-disc;
+  @apply text-textGray;  
 }
 
 .style-job li {
@@ -218,5 +214,9 @@ p, a {
 
 .footer-gradient {
   background-image: linear-gradient( 0deg, rgba( 179,167,139, 0.8 ), rgba( 179,167,139, 0 ) );
+}
+
+.job-shadow {
+  box-shadow: 4px 4px 8px #e3d7bb;
 }
 
