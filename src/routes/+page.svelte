@@ -108,8 +108,8 @@
               { :else }
               <span class="homepage-menu h-[40px] pt-2 inline-block uppercase text-lg">{ link[0] }</span>
             {/if}
-            <img class="w-full md:w-1/3 my-1 h-[2px] object-left" src={img.ruleOfLaw}/>
           </a>
+          <img class="w-full md:w-1/3 my-1 h-[2px] object-left" src={img.ruleOfLaw}/>
         </div>
         { /each }
       </div>
