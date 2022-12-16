@@ -21,8 +21,8 @@
   let socials = [
     [ "https://discord.com/invite/FBdgdbAVbf", "/img/socials/social-discord.svg" ],
     [ "https://twitter.com/riyogames", "/img/socials/social-twitter.svg" ],
-    [ "", "/img/socials/social-instagram.svg" ],
-    [ "", "/img/socials/social-tiktok.svg" ],
+    //[ "", "/img/socials/social-instagram.svg" ],
+    //[ "", "/img/socials/social-tiktok.svg" ],
     [ "/contact", "/img/socials/social-news.svg" ],
   ]
 
