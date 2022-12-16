@@ -107,7 +107,7 @@
         <div class="w-full text-left flex flex-wrap items-center">      
           <img class="mb-0 mt-1 h-[30px]" src={logoImg}/>
           { #if winWidth > 768 }
-            <span class="font-body text-textGray text-tiny pl-2">&#169; Riyo Inc 2022, All Rights Reserved | <a class="text-tiny underline" href="/privacy">Privacy Policy</a> | Site Design by Fully Illustrated</span>   
+            <span class="font-body text-textGray text-tiny pl-2">&#169; Riyo Inc 2022, All Rights Reserved | <a class="text-tiny underline" href="/privacy">Privacy Policy</a> | Site Design by <a href="https://fullyillustrated.com" class="underline text-tiny">Fully Illustrated</a></span>   
           { /if }
         </div>
         { #if winWidth > 768 }
@@ -123,7 +123,7 @@
           </div-->
         { /if }
         { #if winWidth <= 768 }
-          <span class="py-2 w-full font-body text-textGray text-tiny">&#169; Riyo Inc 2022, All Rights Reserved | <a class="text-tiny underline" href="/privacy">Privacy Policy</a> | Site Design by Fully Illustrated</span>   
+          <span class="py-2 w-full font-body text-textGray text-tiny">&#169; Riyo Inc 2022, All Rights Reserved | <a class="text-tiny underline" href="/privacy">Privacy Policy</a> | Site Design by <a href="https://fullyillustrated.com" class="underline text-tiny">Fully Illustrated</a></span>   
         { /if }
       </div>
     </div>
