@@ -70,7 +70,7 @@
       <div class="z-10 w-full md:w-5/6 md:px-0 mt-8 pb-48 mb-4 flex flex-wrap justify-center">
         <div class="w-full md:w-1/2 pr-8">
           <h1>Contact Form</h1>
-          <form data-netlify="true" action="/contact" name="contact" id="contact">
+          <form data-netlify="true" action="/contact" method="POST" name="contact" id="contact">
             <div class="font-display text-3xl mb-6">
               <label htmlFor="name" class="mt-4 block text-sm font-body text-textGray">
                 Name
