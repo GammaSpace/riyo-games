@@ -13,8 +13,6 @@
     logo: "/img/logos/riyo_games_logo_586x288.png",
   }
 
-  let posDom = Array();
-
   onMount( async ()=> {
     fetch(
       'https://graphql.datocms.com/',
@@ -70,7 +68,7 @@
       <div class="z-10 w-full md:w-5/6 md:px-0 mt-8 pb-48 mb-4 flex flex-wrap justify-center">
         <div class="w-full md:w-1/2 pr-8">
           <h1>Contact Form</h1>
-          <form name="contact-form" enctype="application/x-www-form-urlencoded" method="POST"  id="contact" data-netlify="true">
+          <form name="contact-form" action="/contact" method="POST" id="contact" data-netlify="true">
             <input type="hidden" name="form-name" value="contact-form" />
             <div class="font-display text-3xl mb-6">
               <label class="mt-4 block text-sm font-body text-textGray">Name
