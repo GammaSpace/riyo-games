@@ -3,6 +3,7 @@
   import { PUBLIC_DATO_TOKEN } from '$env/static/public';
   import { render as htmlRender } from 'datocms-structured-text-to-html-string';
   import { loaded } from '../../stores';
+  import ContactForm from '../../components/ContactForm.svelte';
 
   const token = PUBLIC_DATO_TOKEN;
 
@@ -68,73 +69,26 @@
       <div class="z-10 w-full md:w-5/6 md:px-0 mt-8 pb-48 mb-4 flex flex-wrap justify-center">
         <div class="w-full md:w-1/2 pr-8">
           <h1>Contact Form</h1>
-          <form name="contact-form" action="/contact" method="POST" id="contact" netlify>
-            <input type="hidden" name="form-name" value="contact-form" />
-            <div class="font-display text-3xl mb-6">
-              <label class="mt-4 block text-sm font-body text-textGray">Name
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  autoComplete="name"
-                  class="mt-1 mb-2 p-1 text-charcoal focus:ring-purple-500 focus:border-purple-500 block w-full shadow-sm text-sm border-gray-300 rounded-md"
-                />
-              </label>
-                <label class="mt-4 block text-sm font-body text-textGray">Email address
-                <input
-                    type="text"
-                    name="email"
-                    id="email"
-                    autoComplete="email-address"
-                    class="mt-1 mb-2 p-1 text-charcoal focus:ring-purple-500 focus:border-purple-500 block w-full shadow-sm text-sm border-gray-300 rounded-md"
-                  />
-              </label>
-              <label class="mt-4 block text-sm font-body text-textGray">Reason for contacting
-                <select
-                  name="reason"
-                  id="reason"
-                  class="mt-1 mb-2 p-1 bg-white focus:ring-purple-500 focus:border-purple-500 font- block w-full text-sm shadow-sm text-charcoal border-gray-300 rounded-md"
-                >
-                  <option value="general" selected>General Info</option>
-                  <option value="media-inq">Media Inquiry</option>
-                  <option value="streamer-inq">Streamer/Influencer Inquiry</option>
-                </select>
-              </label>
-              <label class="mt-4 block text-sm font-body text-textGray">Message
-                <textarea 
-                  class="mt-1 w-full text-sm p-1 text-charcoal rounded-md" 
-                  name="message" 
-                  form="contact"
-                  placeholder="Enter text here..."
-                ></textarea>
-              </label>
-            </div>
-            <button 
-              type="submit" 
-              class="mt-2 btn-std w-[160px] p-2 border-2 text-charcoal border-textGray bg-beige hover:bg-midBeige uppercase"
-            >
-              Submit
-            </button>
-          </form>
+          <ContactForm />
         </div>
-          <div class="w-full md:w-1/2 mt-8 md:mt-0">
-            <h1>Newsletter Signup</h1>
-            <form id="signup" method="post" action="https://www.aweber.com/scripts/addlead.pl">
-              <input type="hidden" name="listname" value="awlist6157223" />
-              <input type="hidden" name="redirect" value="http://www.example.com/thankyou.htm" />
-              <input type="hidden" name="meta_redirect_onlist" value="http://www.example.com/thankyou.htm" />
-              <input type="hidden" name="meta_adtracking" value="custom form" />
-              <input type="hidden" name="meta_message" value="1" /> 
-              <input type="hidden" name="meta_required" value="email" /> 
-              <input type="hidden" name="meta_forward_vars" value="1" /> 
-              <label class="mt-4 block text-sm font-body text-textGray">Name
-                <input type="text" class="mt-1 w-full text-sm p-1 text-charcoal rounded-md" name="name" value="" /> 
-              </label>
-              <label class="mt-4 block text-sm font-body text-textGray">Email
-                <input type="text" class="mt-1 w-full text-sm p-1 text-charcoal rounded-md" name="email" value="" />
-              </label>
-              <input type="submit" class="mt-8 btn-std w-[160px] p-2 border-2 text-charcoal border-textGray bg-beige hover:bg-midBeige hover:cursor-pointer uppercase" name="submit" value="Subscribe" /> 
-            </form>
+        <div class="w-full md:w-1/2 mt-8 md:mt-0">
+          <h1>Newsletter Signup</h1>
+          <form id="signup" method="post" action="https://www.aweber.com/scripts/addlead.pl">
+            <input type="hidden" name="listname" value="awlist6157223" />
+            <input type="hidden" name="redirect" value="http://www.example.com/thankyou.htm" />
+            <input type="hidden" name="meta_redirect_onlist" value="http://www.example.com/thankyou.htm" />
+            <input type="hidden" name="meta_adtracking" value="custom form" />
+            <input type="hidden" name="meta_message" value="1" /> 
+            <input type="hidden" name="meta_required" value="email" /> 
+            <input type="hidden" name="meta_forward_vars" value="1" /> 
+            <label class="mt-4 block text-sm font-body text-textGray">Name
+              <input type="text" class="mt-1 w-full text-sm p-1 text-charcoal rounded-md" name="name" value="" /> 
+            </label>
+            <label class="mt-4 block text-sm font-body text-textGray">Email
+              <input type="text" class="mt-1 w-full text-sm p-1 text-charcoal rounded-md" name="email" value="" />
+            </label>
+            <input type="submit" class="mt-8 btn-std w-[160px] p-2 border-2 text-charcoal border-textGray bg-beige hover:bg-midBeige hover:cursor-pointer uppercase" name="submit" value="Subscribe" /> 
+          </form>
         </div>
       </div>
     </div>
