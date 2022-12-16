@@ -1,4 +1,4 @@
-<script>
+<script context="module">
   import { onMount } from 'svelte';
   import { PUBLIC_DATO_TOKEN } from '$env/static/public';
   import { render as htmlRender } from 'datocms-structured-text-to-html-string';
