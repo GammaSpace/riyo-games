@@ -1,10 +1,8 @@
-<script context="module">
+<script>
   import { onMount } from 'svelte';
   import { PUBLIC_DATO_TOKEN } from '$env/static/public';
   import { render as htmlRender } from 'datocms-structured-text-to-html-string';
   import { loaded } from '../../stores';
-  
-  export const prerender = true
   
   const token = PUBLIC_DATO_TOKEN;
 
@@ -67,10 +65,13 @@
     <div class="z-10 w-full top-[-80px] absolute h-[80px] footer-gradient"></div>
     <div class="z-20 w-full mission-mask relative flex flex-wrap p-8 justify-center items-center -mt-4">
       <div class="bg-careersBandMidBg bg-cover bg-no-repeat absolute w-full h-full"></div>
-      <div class="z-10 w-full md:w-5/6 md:px-0 mt-8 pb-48 mb-4 flex flex-wrap justify-center">
+      <div class="z-10 w-full md:w-5/6 md:px-0 mt-8 pb-64 mb-4 flex flex-wrap justify-center">
         <div class="w-full md:w-1/2 pr-8">
-          <h1>Contact Form</h1>
-          <form name="contact-form" netlify-honeypot="bot-field" method="POST" id="contact" netlify>
+          <h1>Email</h1>
+          <p class="text-textGray">Contact us directly with general, media, or streamer/influencer inquiries.</p>
+          <a href="mailto:contact@riyogames.com" class="underline text-base text-textGray">contact@riyogames.com</a>
+          <!--h1>Contact Form</h1>>
+          <form name="contact-form" netlify-honeypot="bot-field" method="POST" id="contact" data-netlify="true">
             <input type="hidden" name="form-name" value="contact-form" />
             <div class="font-display text-3xl mb-6">
               <label class="mt-4 block text-sm font-body text-textGray">Name
@@ -117,7 +118,7 @@
             >
               Submit
             </button>
-          </form>
+          </form-->
         </div>
         <div class="w-full md:w-1/2 mt-8 md:mt-0">
           <h1>Newsletter Signup</h1>
