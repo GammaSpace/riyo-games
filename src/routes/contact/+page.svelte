@@ -112,7 +112,7 @@
               </label>
               <textarea class="mt-1 w-full text-sm p-1 rounded-md" name="message" form="contact">Enter text here...</textarea>
             </div>
-            <button class="mt-2 btn-std w-[160px] p-2 border-2 text-charcoal border-textGray bg-beige hover:bg-midBeige uppercase">Submit</button>
+            <button type="submit" class="mt-2 btn-std w-[160px] p-2 border-2 text-charcoal border-textGray bg-beige hover:bg-midBeige uppercase">Submit</button>
           </form>
         </div>
           <div class="w-full md:w-1/2 mt-8 md:mt-0">
