@@ -70,7 +70,7 @@
       <div class="z-10 w-full md:w-5/6 md:px-0 mt-8 pb-48 mb-4 flex flex-wrap justify-center">
         <div class="w-full md:w-1/2 pr-8">
           <h1>Contact Form</h1>
-          <form content-type="application/x-www-form-urlencoded" action="/contact" method="POST" name="contact-form" id="contact" netlify>
+          <form enctype="application/x-www-form-urlencoded" action="/contact" method="POST" name="contact-form" id="contact" netlify>
             <div class="font-display text-3xl mb-6">
               <label htmlFor="name" class="mt-4 block text-sm font-body text-textGray">
                 Name
@@ -110,9 +110,9 @@
               >
                 Message
               </label>
-              <textarea name="contents" class="mt-1 w-full text-sm p-1 rounded-md" name="message" form="contact">Enter text here...</textarea>
+              <textarea class="mt-1 w-full text-sm p-1 rounded-md" name="message" form="contact">Enter text here...</textarea>
             </div>
-            <button type="submit" class="mt-2 btn-std w-[160px] p-2 border-2 text-charcoal border-textGray bg-beige hover:bg-midBeige uppercase">Submit</button>
+            <button name="submit" type="submit" class="mt-2 btn-std w-[160px] p-2 border-2 text-charcoal border-textGray bg-beige hover:bg-midBeige uppercase">Submit</button>
           </form>
         </div>
           <div class="w-full md:w-1/2 mt-8 md:mt-0">
