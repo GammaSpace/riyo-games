@@ -153,7 +153,7 @@
     <div class="w-full">
       <h2 class="pb-2">OUR GAMES</h2>
       <h2 class="pb-2 text-4xl">Threads of Time</h2>
-      <hr />
+      <img class="my-2 h-[1.5px] object-left" src={img.ruleOfLaw}/>
       <div class="pt-2 pb-4 text-textGray style-dato-st">
         { @html htmlRender( article.threadsOfTimeIntro ) }
       </div>
