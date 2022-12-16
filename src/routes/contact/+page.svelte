@@ -70,43 +70,54 @@
       <div class="z-10 w-full md:w-5/6 md:px-0 mt-8 pb-48 mb-4 flex flex-wrap justify-center">
         <div class="w-full md:w-1/2 pr-8">
           <h1>Contact Form</h1>
-          <form enctype="application/x-www-form-urlencoded" action="/contact" method="POST" name="contact-form" id="contact" netlify>
+          <form name="contact-form" enctype="application/x-www-form-urlencoded" method="POST"  id="contact" netlify>
             <div class="font-display text-3xl mb-6">
-              <label for="name" class="mt-4 block text-sm font-body text-textGray">Name</label>
-              <input
+              <label class="mt-4 block text-sm font-body text-textGray">Name
+                <input
                   type="text"
                   name="name"
                   id="name"
                   autoComplete="name"
                   class="mt-1 mb-2 p-1 focus:ring-purple-500 focus:border-purple-500 block w-full shadow-sm text-sm border-gray-300 rounded-md"
                 />
-              <label for="email" class="mt-4 block text-sm font-body text-textGray">Email address</label>
-              <input
-                  type="text"
-                  name="email"
-                  id="email"
-                  autoComplete="email-address"
-                  class="mt-1 mb-2 p-1 focus:ring-purple-500 focus:border-purple-500 block w-full shadow-sm text-sm border-gray-300 rounded-md"
-                />
-              <label for="reason" class="mt-4 block text-sm font-body text-textGray">Reason for contacting</label>
-              <select
-                name="reason"
-                id="reason"
-                class="mt-1 mb-2 p-1 bg-white focus:ring-purple-500 focus:border-purple-500 font- block w-full text-sm shadow-sm text-textGray border-gray-300 rounded-md"
-              >
-                <option value="general" selected>General Info</option>
-                <option value="media-inq">Media Inquiry</option>
-                <option value="streamer-inq">Streamer/Influencer Inquiry</option>
-              </select>
-              <label
-                for="message"
-                class="mt-4 block text-sm font-body text-textGray"
-              >
-                Message
               </label>
-              <textarea class="mt-1 w-full text-sm p-1 rounded-md" name="message" form="contact">Enter text here...</textarea>
+                <label class="mt-4 block text-sm font-body text-textGray">Email address
+                <input
+                    type="text"
+                    name="email"
+                    id="email"
+                    autoComplete="email-address"
+                    class="mt-1 mb-2 p-1 focus:ring-purple-500 focus:border-purple-500 block w-full shadow-sm text-sm border-gray-300 rounded-md"
+                  />
+              </label>
+              <label class="mt-4 block text-sm font-body text-textGray">Reason for contacting
+                <select
+                  name="reason"
+                  id="reason"
+                  class="mt-1 mb-2 p-1 bg-white focus:ring-purple-500 focus:border-purple-500 font- block w-full text-sm shadow-sm text-textGray border-gray-300 rounded-md"
+                >
+                  <option value="general" selected>General Info</option>
+                  <option value="media-inq">Media Inquiry</option>
+                  <option value="streamer-inq">Streamer/Influencer Inquiry</option>
+                </select>
+              </label>
+              
+              <label class="mt-4 block text-sm font-body text-textGray">Message
+                <textarea 
+                  class="mt-1 w-full text-sm p-1 rounded-md" 
+                  name="message" 
+                  form="contact"
+                >
+                    Enter text here...
+                </textarea>
+              </label>
             </div>
-            <button name="submit" type="submit" class="mt-2 btn-std w-[160px] p-2 border-2 text-charcoal border-textGray bg-beige hover:bg-midBeige uppercase">Submit</button>
+            <button 
+              type="submit" 
+              class="mt-2 btn-std w-[160px] p-2 border-2 text-charcoal border-textGray bg-beige hover:bg-midBeige uppercase"
+            >
+              Submit
+            </button>
           </form>
         </div>
           <div class="w-full md:w-1/2 mt-8 md:mt-0">
