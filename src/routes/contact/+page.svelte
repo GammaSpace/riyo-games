@@ -68,7 +68,7 @@
       <div class="z-10 w-full md:w-5/6 md:px-0 mt-8 pb-48 mb-4 flex flex-wrap justify-center">
         <div class="w-full md:w-1/2 pr-8">
           <h1>Contact Form</h1>
-          <form name="contact-form" action="/contact" netlify-honeypot="bot-field" method="POST" id="contact" netlify>
+          <form name="contact-form" netlify-honeypot="bot-field" method="POST" id="contact" netlify>
             <input type="hidden" name="form-name" value="contact-form" />
             <div class="font-display text-3xl mb-6">
               <label class="mt-4 block text-sm font-body text-textGray">Name
