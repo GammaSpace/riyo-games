@@ -3,7 +3,9 @@
   import { PUBLIC_DATO_TOKEN } from '$env/static/public';
   import { render as htmlRender } from 'datocms-structured-text-to-html-string';
   import { loaded } from '../../stores';
-
+  
+  export const prerender = true
+  
   const token = PUBLIC_DATO_TOKEN;
 
   let article = "";
