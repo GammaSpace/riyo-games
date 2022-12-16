@@ -68,7 +68,7 @@
       <div class="z-10 w-full md:w-5/6 md:px-0 mt-8 pb-48 mb-4 flex flex-wrap justify-center">
         <div class="w-full md:w-1/2 pr-8">
           <h1>Contact Form</h1>
-          <form name="contact-form" action="/contact" method="POST" id="contact" data-netlify="true">
+          <form name="contact-form" action="/contact" method="POST" id="contact" netlify>
             <input type="hidden" name="form-name" value="contact-form" />
             <div class="font-display text-3xl mb-6">
               <label class="mt-4 block text-sm font-body text-textGray">Name
@@ -77,7 +77,7 @@
                   name="name"
                   id="name"
                   autoComplete="name"
-                  class="mt-1 mb-2 p-1 focus:ring-purple-500 focus:border-purple-500 block w-full shadow-sm text-sm border-gray-300 rounded-md"
+                  class="mt-1 mb-2 p-1 text-charcoal focus:ring-purple-500 focus:border-purple-500 block w-full shadow-sm text-sm border-gray-300 rounded-md"
                 />
               </label>
                 <label class="mt-4 block text-sm font-body text-textGray">Email address
@@ -86,7 +86,7 @@
                     name="email"
                     id="email"
                     autoComplete="email-address"
-                    class="mt-1 mb-2 p-1 focus:ring-purple-500 focus:border-purple-500 block w-full shadow-sm text-sm border-gray-300 rounded-md"
+                    class="mt-1 mb-2 p-1 text-charcoal focus:ring-purple-500 focus:border-purple-500 block w-full shadow-sm text-sm border-gray-300 rounded-md"
                   />
               </label>
               <label class="mt-4 block text-sm font-body text-textGray">Reason for contacting
@@ -100,14 +100,13 @@
                   <option value="streamer-inq">Streamer/Influencer Inquiry</option>
                 </select>
               </label>
-              
               <label class="mt-4 block text-sm font-body text-textGray">Message
                 <textarea 
-                  class="mt-1 w-full text-sm p-1 rounded-md" 
+                  class="mt-1 w-full text-sm p-1 text-charcoal rounded-md" 
                   name="message" 
                   form="contact"
-                >Enter text here...
-                </textarea>
+                  placeholder="Enter text here..."
+                ></textarea>
               </label>
             </div>
             <button 
@@ -128,20 +127,12 @@
               <input type="hidden" name="meta_message" value="1" /> 
               <input type="hidden" name="meta_required" value="email" /> 
               <input type="hidden" name="meta_forward_vars" value="1" /> 
-              <label
-                for="name"
-                class="mt-4 block text-sm font-body text-textGray"
-              >
-                Name
+              <label class="mt-4 block text-sm font-body text-textGray">Name
+                <input type="text" class="mt-1 w-full text-sm p-1 text-charcoal rounded-md" name="name" value="" /> 
               </label>
-              <input type="text" class="mt-1 w-full text-sm p-1 rounded-md" name="name" value="" /> 
-              <label
-                for="email"
-                class="mt-4 block text-sm font-body text-textGray"
-              >
-                Email
+              <label class="mt-4 block text-sm font-body text-textGray">Email
+                <input type="text" class="mt-1 w-full text-sm p-1 text-charcoal rounded-md" name="email" value="" />
               </label>
-              <input type="text" class="mt-1 w-full text-sm p-1 rounded-md" name="email" value="" />
               <input type="submit" class="mt-8 btn-std w-[160px] p-2 border-2 text-charcoal border-textGray bg-beige hover:bg-midBeige hover:cursor-pointer uppercase" name="submit" value="Subscribe" /> 
             </form>
         </div>
