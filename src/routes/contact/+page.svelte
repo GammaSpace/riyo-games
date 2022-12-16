@@ -70,7 +70,8 @@
       <div class="z-10 w-full md:w-5/6 md:px-0 mt-8 pb-48 mb-4 flex flex-wrap justify-center">
         <div class="w-full md:w-1/2 pr-8">
           <h1>Contact Form</h1>
-          <form name="contact-form" enctype="application/x-www-form-urlencoded" method="POST"  id="contact" netlify>
+          <form name="contact-form" enctype="application/x-www-form-urlencoded" method="POST"  id="contact" data-netlify="true">
+            <input type="hidden" name="form-name" value="contact-form" />
             <div class="font-display text-3xl mb-6">
               <label class="mt-4 block text-sm font-body text-textGray">Name
                 <input
@@ -94,7 +95,7 @@
                 <select
                   name="reason"
                   id="reason"
-                  class="mt-1 mb-2 p-1 bg-white focus:ring-purple-500 focus:border-purple-500 font- block w-full text-sm shadow-sm text-textGray border-gray-300 rounded-md"
+                  class="mt-1 mb-2 p-1 bg-white focus:ring-purple-500 focus:border-purple-500 font- block w-full text-sm shadow-sm text-charcoal border-gray-300 rounded-md"
                 >
                   <option value="general" selected>General Info</option>
                   <option value="media-inq">Media Inquiry</option>
@@ -107,8 +108,7 @@
                   class="mt-1 w-full text-sm p-1 rounded-md" 
                   name="message" 
                   form="contact"
-                >
-                    Enter text here...
+                >Enter text here...
                 </textarea>
               </label>
             </div>
