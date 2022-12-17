@@ -157,9 +157,9 @@
       <div class="pt-2 pb-4 text-textGray style-dato-st">
         { @html htmlRender( article.threadsOfTimeIntro ) }
       </div>
-      <form class="inline-block pb-4" action="/games">
+      <div class="inline-block pb-4">
         <a href="https://www.threadsoftimegame.com"><button class="btn-std hover:bg-beige border-2 border-textGray py-2 px-6 bg-tan text-charcoal uppercase">Learn More</button></a>
-      </form>
+      </div>
     </div>
   </div>
 </div>
