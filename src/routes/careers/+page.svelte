@@ -131,9 +131,9 @@
               <div bind:this={posDom[id][0]} class="max-h-0 bg-whiteTan overflow-y-hidden toggle-job">
                 <div class="px-4 py-4 w-[70%] style-job text-textGray">
                   {@html job.description}
-                  <form class="inline-block pb-4" action="/about">
+                  <div class="inline-block pb-4">
                     <a href={job.applyUrl}><button class="uppercase font-menu text-center w-[120px] md:w-[140px] h-[40px] bg-charcoal text-lg text-beige py-2">Apply</button></a>
-                  </form>
+                  </div>
                 </div>
               </div>
             {/each}          

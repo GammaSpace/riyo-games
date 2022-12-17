@@ -154,9 +154,9 @@
           <img class="mb-4 h-[18px] md:h-[22px] object-cover object-left" src={img.timeRuleBeige}/>
           <div class="py-4 flex text-textGray flex-wrap style-dato-st">
             <div class="w-full">{ @html htmlRender( article.workWithUs ) }</div>
-            <form class="inline-block" action="/careers">
+            <div class="inline-block">
               <a href="/careers"><button class="mt-2 btn-std w-[160px] p-2 border-2 text-charcoal border-textGray bg-beige hover:bg-midBeige uppercase">Work With Us</button></a>
-            </form>      
+            </div>      
           </div>
         </div>
       </div>
