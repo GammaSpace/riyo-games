@@ -74,7 +74,7 @@
     .then( ( res ) => {
       article = res.data.about;
       bios = res.data.allBios;
-      console.log( bios );
+      //console.log( bios );
       //goPage( 0 );
       //console.log( article );
       loaded.set( true );
@@ -166,33 +166,18 @@
     <div class="w-full md:w-5/6 flex flex-wrap">
       <div class="w-full relative text-tan text-left flex flex-wrap">  
         <h1 class="w-full">Our Team</h1>
-        { #if bioPage > 0 }
-          <!--span class="absolute right-12 top-[18px]" id="bio-page-btn" on:click={()=>goPage( bioPage - 1 )}><img class="-scale-x-100" src={img.mickey}/></span-->
-        { /if }
-        { #if bioPage + 1 < Math.ceil( bios.length / pageDiv ) }
-          <!--span class="absolute right-0 top-[18px]" id="bio-page-btn" on:click={()=>goPage( bioPage + 1 )}><img src={img.mickey}/></span-->
-        { /if }
         <img class="mb-4 h-[22px] object-cover object-left" src={img.timeRule}/>
         { #each bios as bio }
           <div class="w-full md:w-1/2 lg:w-1/3 flex flex-wrap mb-4 pr-4">
             <div class="w-1/3 md:w-1/2">
-          <!--div class="w-full flex flex-wrap">
-            <div class="w-full md:w-1/2 flex flex-wrap relative">
-              <div class="w-1/3 py-4 relative"-->
-                
               <div class="mr-4 bg-boxBlue border-[4px] md:border-[5px] border-gray-700"><img class="" src={bio.portrait?.url}/></div> 
-              <!--/div-->
             </div>
             <div class="w-2/3 md:w-1/2 font-menu">
               <h2 class="text-xl">{bio.name}</h2>
               <h2 class="text-blue-400 pb-1">{bio.role}</h2>
               <hr class="border-tan w-3/4"/>
-              <!--p class="pt-2">LV: { bios[bio].level }<br /></p>
-              <p>HP: { bios[bio].hp } <span class="text-gray-600">/9999</span></p-->    
-            </div>
-            <!--div class="py-4 w-full md:w-1/2 style-dato-st">{@html htmlRender( bios[bio].bio)}</div-->    
+            </div>  
           </div>
-          <!--hr class="ml-[16.6%] w-[83.3%] border-textGray mb-4" /-->
         { /each }
       </div>
     </div>

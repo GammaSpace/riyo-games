@@ -91,7 +91,6 @@
 <div class="bg-welcomeBandBg bg-cover bg-center p-8 pb-12 pt-16 flex flex-wrap pt-12 pb-24 md:pl-[10%]">
   <div class="w-full mt-16 md:w-1/2">
     <img class="mb-8" src={img.logo} />
-    <!--hr class="-mt-12" /-->
     <img class="-mt-12 h-[2px] object-left" src={img.ruleOfLaw}/>
     <div class="pt-8 pb-4 text-textGray style-dato-header">
       { @html htmlRender( article.studioDescription ) }
