@@ -224,3 +224,14 @@ p, a {
   box-shadow: 4px 4px 8px #e3d7bb;
 }
 
+.style-dato-footer {
+  @apply text-tiny font-body text-textGray text-tiny pl-1 mb-0; 
+}
+
+.style-dato-footer p {
+  @apply text-tiny font-body text-textGray text-tiny mb-0;
+}
+
+.style-dato-footer a {
+  @apply text-tiny underline;
+}

@@ -1,7 +1,11 @@
 <script>
+  //import { onMount } from 'svelte';
   import "../app.css";
   import { page } from '$app/stores';
+  import { render as htmlRender } from 'datocms-structured-text-to-html-string';
   import { loaded } from '../stores.js';
+
+  export let data;
   
   const pages = [
     ["home","/"],    
@@ -26,9 +30,10 @@
   ]
 
   function resetLoaded( page ) {
-    if ( navSelected != page ) {
-      loaded.set( false );
-    }
+    console.log( navSelected );
+    /*if ( navSelected != page ) {
+      loaded.set( true );
+    }*/
   }
 
   let fullyLoaded = false;
@@ -44,7 +49,7 @@
     showDropdown = !showDropdown;
   }
 
-  $: navSelected = $page.url.pathname;
+  $: navSelected = $page.url.pathname;  
 </script>
 
 <svelte:window bind:scrollY={yPos} bind:innerWidth={winWidth}/>
@@ -107,11 +112,13 @@
         <div class="w-full text-left flex flex-wrap items-center">      
           <img class="mb-0 mt-1 h-[30px]" src={logoImg}/>
           { #if winWidth > 768 }
-            <span class="font-body text-textGray text-tiny pl-2">&#169; Riyo Inc 2022, All Rights Reserved | <a class="text-tiny underline" href="/privacy">Privacy Policy</a> | Site Design by <a href="https://fullyillustrated.com" class="underline text-tiny">Fully Illustrated</a></span>   
+            <span class="font-body text-textGray text-tiny pl-2">&#169; Riyo Inc 2022, All Rights Reserved |</span><span class="style-dato-footer">{@html htmlRender( data.article.footerContent ) }</span>   
           { /if }
         </div>
         { #if winWidth <= 768 }
-          <span class="py-2 w-full font-body text-textGray text-tiny">&#169; Riyo Inc 2022, All Rights Reserved | <a class="text-tiny underline" href="/privacy">Privacy Policy</a> | Site Design by <a href="https://fullyillustrated.com" class="underline text-tiny">Fully Illustrated</a></span>   
+          <div class="w-full">
+            <span class="py-2 font-body text-textGray text-tiny">&#169; Riyo Inc 2022, All Rights Reserved |</span><span class="style-dato-footer">{@html htmlRender( data.article.footerContent ) }</span>   
+          </div>
         { /if }
       </div>
     </div>

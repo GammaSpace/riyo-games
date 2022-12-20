@@ -1,63 +1,26 @@
 <script>
-  import { onMount } from 'svelte';
-  import { PUBLIC_DATO_TOKEN } from '$env/static/public';
   import { render as htmlRender } from 'datocms-structured-text-to-html-string';
-  import { loaded } from '../../stores';
-  
-  const token = PUBLIC_DATO_TOKEN;
 
-  let article = "";
+  export let data;
 
   let img = {
     divider: "/img/about/divider.png",
     logo: "/img/logos/riyo_games_logo_586x288.png",
   }
 
-  onMount( async ()=> {
-    fetch(
-      'https://graphql.datocms.com/',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-          'Authorization': `Bearer ${token}`,
-        },
-        body: JSON.stringify({
-          query: `{
-            contact {
-              title,
-              description {
-                value
-              }
-            }
-          }`
-        }),
-      }
-    )
-    .then(  ( res ) => res.json() )
-    .then(  ( res ) => {
-      article = res.data.contact;
-      loaded.set( true );
-    })
-    .catch( ( err ) => {
-      console.log( err );
-    });
-  })  
-
   let yPos = 0;
 </script>
 
 <svelte:window bind:scrollY={yPos}/>
 
-{ #if article.title != undefined }
+{ #if data.article.title != undefined }
   <div class="bg-careersBandTopBg bg-cover bg-center bg-no-repeat p-8 pb-12 flex flex-wrap pt-12 justify-center">  
     <div class="mt-8 mb-12 w-full md:w-5/6 justify-center items-center flex flex-wrap">
       <div class="w-full md:w-1/3 xl:w-1/4"><img class="mx-auto" src={img.logo} /></div>
       <div class="w-full md:w-2/3 xl:w-3/4 pl-0 md:px-16">
-        <h1>Contact Us</h1>
+        <h1>{data.article.contactHeader}</h1>
         <img class="pb-4" src={img.divider}/>
-        <div class="text-textGray style-dato-header">{ @html htmlRender( article.description ) }</div>
+        <div class="text-textGray style-dato-header">{ @html htmlRender( data.article.description ) }</div>
       </div>
     </div>
   </div>
@@ -67,9 +30,9 @@
       <div class="bg-careersBandMidBg bg-cover bg-no-repeat absolute w-full h-full"></div>
       <div class="z-10 w-full md:w-5/6 md:px-0 mt-8 pb-64 mb-4 flex flex-wrap justify-center">
         <div class="w-full md:w-1/2 pr-8">
-          <h1>Email</h1>
-          <p class="text-textGray">Contact us directly with general, media, or streamer/influencer inquiries.</p>
-          <a href="mailto:contact@riyogames.com" class="underline text-base text-textGray">contact@riyogames.com</a>
+          <h1>{data.article.emailHeader}</h1>
+          <p class="text-textGray">{@html htmlRender( data.article.emailContent )}</p>
+          <a href="mailto:contact@riyogames.com" class="underline text-base text-textGray">{data.article.emailContact}</a>
           <!--h1>Contact Form</h1>>
           <form name="contact-form" netlify-honeypot="bot-field" method="POST" id="contact" data-netlify="true">
             <input type="hidden" name="form-name" value="contact-form" />
@@ -121,7 +84,7 @@
           </form-->
         </div>
         <div class="w-full md:w-1/2 mt-8 md:mt-0">
-          <h1>Newsletter Signup</h1>
+          <h1>{data.article.newsletterHeader}</h1>
           <form id="signup" method="post" action="https://www.aweber.com/scripts/addlead.pl">
             <input type="hidden" name="listname" value="awlist6157223" />
             <input type="hidden" name="redirect" value="http://www.example.com/thankyou.htm" />
