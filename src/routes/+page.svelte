@@ -135,12 +135,12 @@
       { @html htmlRender( article.additionalDescription ) }
     </div>
     <div class="">
-      <form class="inline-block p-4" action="/about">
+      <div class="inline-block p-4">
         <a href="/about"><button class="btn-std hover:bg-darkBeige w-[160px] p-2 bg-beige uppercase">Learn More</button></a>
-      </form>
-      <form class="inline-block" action="/careers">
+      </div>
+      <div class="inline-block">
         <a href="/careers"><button class="btn-std hover:bg-darkBeige w-[160px] p-2 bg-beige uppercase">Work With Us</button></a>
-      </form>      
+      </div>      
     </div>
   </div>
 </div>

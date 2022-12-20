@@ -41,7 +41,7 @@
 
   let showDropdown = false;
   function mobileMenu() {
-    showDropdown = !showDropdown
+    showDropdown = !showDropdown;
   }
 
   $: navSelected = $page.url.pathname;
@@ -70,7 +70,7 @@
       <div class="py-4 text-center">
         <div class="inline-block">
           { #each socials as social }
-            <a class="mx-3" href={social[0]}><img class="inline-block w-[45px] h-auto" src={social[1]}/></a>
+            <a on:click={()=>mobileMenu()} class="mx-3" href={social[0]}><img class="inline-block w-[45px] h-auto" src={social[1]}/></a>
           {/each}
         </div>
       </div>
@@ -110,18 +110,6 @@
             <span class="font-body text-textGray text-tiny pl-2">&#169; Riyo Inc 2022, All Rights Reserved | <a class="text-tiny underline" href="/privacy">Privacy Policy</a> | Site Design by <a href="https://fullyillustrated.com" class="underline text-tiny">Fully Illustrated</a></span>   
           { /if }
         </div>
-        { #if winWidth > 768 }
-          <!--div class="w-5/6 xl:w-[50%] text-right">
-            <div class="hidden md:inline-block"-->
-              { #each pages as page }
-                <!--span class="pl-4"><h4 class="inline-block uppercase"><a href="{ page[1] }">{ page[0] }</a></h4></span-->
-              { /each }
-              { #each socials as social }
-                <!--a href={social[0]}><img class="mx-1 inline-block w-[30px] h-auto" src={social[1]}/></a-->
-              {/each}
-            <!--/div>
-          </div-->
-        { /if }
         { #if winWidth <= 768 }
           <span class="py-2 w-full font-body text-textGray text-tiny">&#169; Riyo Inc 2022, All Rights Reserved | <a class="text-tiny underline" href="/privacy">Privacy Policy</a> | Site Design by <a href="https://fullyillustrated.com" class="underline text-tiny">Fully Illustrated</a></span>   
         { /if }

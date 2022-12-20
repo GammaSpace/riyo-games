@@ -37,7 +37,7 @@
     )
     .then( res => res.json() )
     .then( ( res ) => {
-      console.log( res );
+      //console.log( res );
       article = res.data.privacyPolicy;
       //console.log( article );
       loaded.set( true );

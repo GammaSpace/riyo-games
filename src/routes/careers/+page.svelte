@@ -115,24 +115,28 @@
           <h1 class="inline-block pr-3">Open Positions</h1><h1 class="inline-block text-boxBlue">{ positions.length > 0 ? `(${positions.length})` : "" }</h1>
           <div class="pb-4 text-textGray">
             {#each positions as job, id }
-              <div class="job-shadow mt-4 px-4 py-4 {posDom[id][1] == "Read More" ? " bg-whiteTan" : " bg-charcoal" }">
-                <div class="w-full relative flex flex-wrap justify-center items-center font-menu">
-                  <h2 class="pb-2 md:pb-0 text-xl text-center md:text-left w-full md:w-[calc(100%-140px)] pr-4 {posDom[id][1] == "Read More" ? " text-textGray" : " text-boxBlue" }">{job.title}</h2>
-                  <div class="w-full text-center md:w-auto">
-                    <button 
-                      on:click={()=>toggleJob(id)}
-                      class="uppercase my-2 md:my-0 font-menu text-center w-[120px] md:w-[140px] h-[40px] bg-charcoal px-4 py-2 {posDom[id][1] == "Read More" ? "text-beige hover:text-boxBlue" : " text-textGray hover:text-darkBeige" }"
-                    >
-                      {posDom[id][1]}
-                    </button>
+              <div class="flex flex-wrap justify-center">
+                <div class="w-full job-shadow mt-4 px-4 py-4 {posDom[id][1] == "Read More" ? " bg-whiteTan" : " bg-charcoal" }">
+                  <div class="w-full relative flex flex-wrap justify-center items-center font-menu">
+                    <h2 class="pb-2 md:pb-0 text-xl text-center md:text-left w-full md:w-[calc(100%-140px)] pr-4 {posDom[id][1] == "Read More" ? " text-textGray" : " text-boxBlue" }">{job.title}</h2>
+                    <div class="w-full text-center md:w-auto">
+                      <button 
+                        on:click={()=>toggleJob(id)}
+                        class="uppercase my-2 md:my-0 font-menu text-center w-[120px] md:w-[140px] h-[40px] bg-charcoal px-4 py-2 {posDom[id][1] == "Read More" ? "text-beige hover:text-boxBlue" : " text-textGray hover:text-darkBeige" }"
+                      >
+                        {posDom[id][1]}
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div bind:this={posDom[id][0]} class="max-h-0 bg-whiteTan overflow-y-hidden toggle-job">
-                <div class="px-4 py-4 w-[70%] style-job text-textGray">
-                  {@html job.description}
-                  <div class="inline-block pb-4">
-                    <a href={job.applyUrl}><button class="uppercase font-menu text-center w-[120px] md:w-[140px] h-[40px] bg-charcoal text-lg text-beige py-2">Apply</button></a>
+                <div bind:this={posDom[id][0]} class="w-full max-h-0 bg-whiteTan overflow-y-hidden toggle-job">
+                  <div class="px-4 py-4 style-job text-textGray">
+                    <div class="max-w-[768px]">
+                      {@html job.description}
+                      <div class="inline-block pb-4">
+                        <a href={job.applyUrl}><button class="uppercase font-menu text-center w-[120px] md:w-[140px] h-[40px] bg-charcoal text-lg text-beige py-2">Apply</button></a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
