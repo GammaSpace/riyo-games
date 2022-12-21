@@ -43,12 +43,12 @@
     <div class="mb-12 w-full justify-center flex flex-wrap">
       <div class="flex flex-wrap max-w-[580px]">
         <div class="w-full flex flex-wrap justify-center items-center">
-          <img class="w-[35%] h-[1.5px] md:h-auto" src={img.ruleOfLaw} />
+          <img alt="Horizontal Rule" class="w-[35%] h-[1.5px] md:h-auto" src={img.ruleOfLaw} />
           <h1 class="w-[30%] text-center mb-2">{data.article.about.title}</h1>
-          <img class="w-[35%] h-[1.5px] md:h-auto" src={img.ruleOfLaw} />  
+          <img alt="Horizontal Rule" class="w-[35%] h-[1.5px] md:h-auto" src={img.ruleOfLaw} />  
         </div>
-        <img class="mx-auto" src={img.logo} />
-        <img class="-mt-7 h-[2px] object-left" src={img.ruleOfLaw}/>
+        <img alt="Riyo Games Logo" class="mx-auto" src={img.logo} />
+        <img alt="Horizontal Rule" class="-mt-7 h-[2px] object-left" src={img.ruleOfLaw}/>
         <div class="mt-8 text-textGray text-center style-dato-header">
           { @html htmlRender( data.article.about.description ) }
         </div>
@@ -63,28 +63,28 @@
       <div class="z-10 w-full md:px-0 my-16 md:w-5/6 flex flex-wrap justify-center">
         <div class="w-full">
           <h1>{ data.article.about.storyHeader }</h1>
-          <img class="mb-4 h-[18px] md:h-[22px] object-cover object-left" src={img.timeRuleBeige}/>
+          <img alt="Horizontal Rule" class="mb-4 h-[18px] md:h-[22px] object-cover object-left" src={img.timeRuleBeige}/>
           <div class="py-4 text-textGray style-dato-st">
             { @html htmlRender( data.article.about.story ) }
           </div>
         </div>
         <div class="w-full lg:w-1/2 md:pr-[7%] pb-4">
           <h1>{data.article.about.visionHeader}</h1>
-          <img src={img.divider}/>
+          <img alt="Horizontal Rule" src={img.divider}/>
           <div class="py-4 text-textGray style-dato-st">
             { @html htmlRender( data.article.about.vision ) }
           </div>
         </div>
         <div class="w-full lg:w-1/2 md:pr-[7%] pb-4">
           <h1>{data.article.about.valuesHeader}</h1>
-          <img src={img.divider}/>
+          <img alt="Horizontal Rule" src={img.divider}/>
           <div class="py-4 text-textGray style-dato-st">
             { @html htmlRender( data.article.about.values ) }
           </div>
         </div>
         <div class="w-full">
           <h1>{data.article.about.careersHeader}</h1>
-          <img class="mb-4 h-[18px] md:h-[22px] object-cover object-left" src={img.timeRuleBeige}/>
+          <img alt="Horizontal Rule" class="mb-4 h-[18px] md:h-[22px] object-cover object-left" src={img.timeRuleBeige}/>
           <div class="py-4 flex text-textGray flex-wrap style-dato-st">
             <div class="w-full">{ @html htmlRender( data.article.about.workWithUs ) }</div>
             <div class="inline-block">

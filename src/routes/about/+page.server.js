@@ -58,7 +58,7 @@ export async function load() {
     )
     .then( res => res.json() )
     .then( ( res ) => {
-      console.log( res.data );
+      //console.log( res.data );
       return res.data;
     })
     .catch( ( error ) => {

@@ -45,40 +45,40 @@
 { #if data.article.title != undefined }
 <div class="bg-welcomeBandBg bg-cover bg-center p-8 pb-12 pt-16 flex flex-wrap pt-12 pb-24 md:pl-[10%]">
   <div class="w-full mt-16 md:w-1/2">
-    <img class="mb-8" src={img.logo} />
-    <img class="-mt-12 h-[2px] object-left" src={img.ruleOfLaw}/>
+    <img alt="Riyo Games Logo" class="mb-8" src={img.logo} />
+    <img alt="Horizontal Rule" class="-mt-12 h-[2px] object-left" src={img.ruleOfLaw}/>
     <div class="pt-8 pb-4 text-textGray style-dato-header">
       { @html htmlRender( data.article.studioDescription ) }
     </div>
-    <img class="mb-2 h-[2px] object-left" src={img.ruleOfLaw}/>
+    <img alt="Horizontal Rule" class="mb-2 h-[2px] object-left" src={img.ruleOfLaw}/>
     <div class="flex flex-wrap justify-center relative">
       <div class="w-1/2 md:w-full">
         { #each homeLinks as link, i }
         <div class="">
           <a bind:this={handActive[i][0]} on:mouseenter={()=>handleMickey(i)} on:mouseleave={()=>{handActive[i][1]=false}} href="{ link[1] }">
             { #if handActive[i][1] }
-              <div class="pt-2 absolute mickey-bounce inline-block w-[40px]"><img class="inline-block" src={img.mickey}/></div>
+              <div class="pt-2 absolute mickey-bounce inline-block w-[40px]"><img alt="Menu Selector" class="inline-block" src={img.mickey}/></div>
               <span class="h-[40px] pl-12 pt-2 inline-block uppercase text-lg">{ link[0] }</span>
               { :else }
               <span class="homepage-menu h-[40px] pt-2 inline-block uppercase text-lg">{ link[0] }</span>
             {/if}
           </a>
-          <img class="w-full md:w-1/3 my-1 h-[2px] object-left" src={img.ruleOfLaw}/>
+          <img alt="Horizontal Rule" class="w-full md:w-1/3 my-1 h-[2px] object-left" src={img.ruleOfLaw}/>
         </div>
         { /each }
       </div>
     </div>
   </div>
   <div class="relative w-full md:w-1/2 flex justify-center items-center">
-    <div class=""><img class="-mr-8 max-w-[140%] mt-8 md:mt-0 float-right" src={img.portal}></div>
-    <div class="absolute z-1 w-1/2 ml-48 md:ml-64 mt-48 md:mt-16 mr-48"><img style="transform: translate(0,{ -yPos * ( winWidth > 768 ? 0.2 : 0.1 )}px)" class="max-w-[140%] overflow-x-hidden" src={img.hero}></div>
+    <div class=""><img alt="Stylized Landscape" class="-mr-8 max-w-[140%] mt-8 md:mt-0 float-right" src={img.portal}></div>
+    <div class="absolute z-1 w-1/2 ml-48 md:ml-64 mt-48 md:mt-16 mr-48"><img alt="Heroic Figure" style="transform: translate(0,{ -yPos * ( winWidth > 768 ? 0.2 : 0.1 )}px)" class="max-w-[140%] overflow-x-hidden" src={img.hero}></div>
   </div>
 </div>
 <div class="mission-mask relative flex flex-wrap justify-center -mt-4 items-center">
   <div class="bg-missionBandBg bg-center md:bg-cover bg-no-repeat absolute w-full h-full"></div>
   <div class="circle-mask absolute w-full h-full flex flex-wrap justify-center items-center overflow-hidden">
     <div class="absolute w-[130%] sm:w-[110%] md:w-[100%] lg:w-[90%] xl:w-[80%]">
-      <img style="transform: translate(0,{-yPos * 0.1}px)" class="mt-64 sm:mt-48 mx-auto" src={img.circle}/>
+      <img alt="Stylized Background Circle" style="transform: translate(0,{-yPos * 0.1}px)" class="mt-64 sm:mt-48 mx-auto" src={img.circle}/>
     </div>
   </div>
   <div class="z-10 px-8 text-center w-full py-16 md:py-[16vw] 2xl:py-[15vw] md:w-2/3 xl:w-1/2">
@@ -100,14 +100,14 @@
 </div>
 <div class="bg-totBandBg bg-center bg-cover bg-no-repeat p-8 pb-16 flex flex-wrap pt-16 md:pt-24 -mt-4 overflow-y-hidden overflow-x-hidden">
   <div class="relative w-full md:w-1/2 flex items-center pr-0 md:pr-20 xl:pr-24 ">
-    <div class=""><img class="max-w-[130%] -ml-8" src={img.castle}></div>
-    <div class="absolute w-3/4 z-1 -ml-12 pt-[15rem] md:pt-[20rem] 2xl:pt-[30rem]"><img style="transform: translate(0,{ -yPos * ( winWidth > 768 ? 0.2 : 0.1 ) }px)" class="max-w-[140%]" src={img.tot}></div>
+    <div class=""><img alt="Castle Overlooking Water" class="max-w-[130%] -ml-8" src={img.castle}></div>
+    <div class="absolute w-3/4 z-1 -ml-12 pt-[15rem] md:pt-[20rem] 2xl:pt-[30rem]"><img alt="Threads of Time Game Logo" style="transform: translate(0,{ -yPos * ( winWidth > 768 ? 0.2 : 0.1 ) }px)" class="max-w-[140%]" src={img.tot}></div>
   </div>
   <div class="z-10 w-full md:w-1/2 flex flex-wrap">
     <div class="w-full">
       <h2 class="pb-2">{data.article.gamesHeader}</h2>
       <h2 class="pb-2 text-4xl">{data.article.gamesSubHeader}</h2>
-      <img class="my-2 h-[1.5px] object-left" src={img.ruleOfLaw}/>
+      <img alt="Horizontal Rule" class="my-2 h-[1.5px] object-left" src={img.ruleOfLaw}/>
       <div class="pt-2 pb-4 text-textGray style-dato-st">
         { @html htmlRender( data.article.threadsOfTimeIntro ) }
       </div>

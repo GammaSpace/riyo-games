@@ -94,11 +94,11 @@
     <div class="mb-12 w-full justify-center flex flex-wrap">
       <div class="flex flex-wrap justify-center">
         <div class="w-5/6 md:w-1/2 flex flex-wrap justify-center items-center">
-          <img class="w-[30%] md:w-[35%] h-[1.5px] md:h-[1px]" src={img.ruleOfLaw} />
+          <img alt="Horizontal Rule" class="w-[30%] md:w-[35%] h-[1.5px] md:h-[1px]" src={img.ruleOfLaw} />
           <h1 class="w-[40%] md:w-[30%] text-center mb-2">Games</h1>
-          <img class="w-[30%] md:w-[35%] h-[1.5px] md:h-[1px]" src={img.ruleOfLaw} />  
+          <img alt="Horizontal Rule" class="w-[30%] md:w-[35%] h-[1.5px] md:h-[1px]" src={img.ruleOfLaw} />  
         </div>
-        <img class="mx-auto w-full md:w-[90%] xl:w-[80%]" src={img.totTitle} />
+        <img alt="Threads Of Time Game Logo" class="mx-auto w-full md:w-[90%] xl:w-[80%]" src={img.totTitle} />
         <div class="flex flex-wrap justify-center items-center">
         <div class="w-full md:w-2/3 xl:w-1/2 mt-8 text-textGray text-center style-dato-header">
           { @html htmlRender( article.totDescription ) }
@@ -114,8 +114,8 @@
       <h1 class="w-full text-beige">Screenshots</h1>
       <hr class="w-full mb-4">
       <div class="w-full flex flex-wrap justify-center">
-        <div class="w-full pr-0 pb-8 md:w-1/2 md:pr-4 md:pb-0"><img class="w-full" src={img.swordGif}/></div>
-        <div class="w-full pl-0 pb-8 md:w-1/2 md:pl-4 md:pb-0"><img class="w-full" src={img.dinosGif}/></div>
+        <div class="w-full pr-0 pb-8 md:w-1/2 md:pr-4 md:pb-0"><img alt="Game Screenshot" class="w-full" src={img.swordGif}/></div>
+        <div class="w-full pl-0 pb-8 md:w-1/2 md:pl-4 md:pb-0"><img alt="Game Screenshot" class="w-full" src={img.dinosGif}/></div>
       </div>
     </div>
   </div>
@@ -125,14 +125,14 @@
     <div class="z-10 w-full md:px-0 mt-12 mb-8 md:w-5/6 flex flex-wrap justify-center">
       <div class="w-full lg:w-1/2 md:pr-[7%] pb-4">
         <h1>About the Game</h1>
-        <img src={img.divider}/>
+        <img alt="Horizontal Rule" src={img.divider}/>
         <div class="py-4 text-textGray style-dato-st">
           { @html htmlRender( article.moreDetails ) }
         </div>
       </div>
       <div class="w-full lg:w-1/2 md:pr-[7%] pb-4">
         <h1>Features</h1>
-        <img src={img.divider}/>
+        <img alt="Horizontal Rule" src={img.divider}/>
         <div class="py-4 text-textGray style-dato-st">
           { @html htmlRender( article.features ) }
         </div>
@@ -148,7 +148,7 @@
             </div>
             <div class="absolute z-10 py-4 px-6 top-0 text-center text-lg">
               <a href={cta.link}>
-                <div class="w-2/3 mx-auto mb-4"><img src={cta.svg.url}/></div>
+                <div class="w-2/3 mx-auto mb-4"><img alt="Social Media Icon" src={cta.svg.url}/></div>
                 <p class="font-menu text-charcoal text-lg uppercase">{ cta.title }</p>
               </a>
               <div class="style-dato-st mt-4">  
