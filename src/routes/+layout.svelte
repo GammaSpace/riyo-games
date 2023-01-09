@@ -1,9 +1,7 @@
 <script>
-  //import { onMount } from 'svelte';
   import "../app.css";
   import { page } from '$app/stores';
   import { render as htmlRender } from 'datocms-structured-text-to-html-string';
-  import { loaded } from '../stores.js';
 
   export let data;
   
@@ -22,27 +20,8 @@
   let navSelectedImg = "/img/ui/nav_selected_state.png";
   let ruleOfLaw = "/img/ui/rule_of_law.png";
 
-  let socials = [
-    [ "https://discord.com/invite/FBdgdbAVbf", "/img/socials/social-discord.svg" ],
-    [ "https://twitter.com/riyogames", "/img/socials/social-twitter.svg" ],
-    [ "https://www.instagram.com/riyogames/", "/img/socials/social-instagram.svg" ],
-    [ "/contact", "/img/socials/social-news.svg" ],
-  ]
-
-  function resetLoaded( page ) {
-    //console.log( navSelected );
-    /*if ( navSelected != page ) {
-      loaded.set( true );
-    }*/
-  }
-
-  let fullyLoaded = false;
   let winWidth = 0;
   let navSelected = $page.url.pathname;
-
-  loaded.subscribe( val => {
-    fullyLoaded = val;
-  })
 
   let showDropdown = false;
   function mobileMenu() {
@@ -54,7 +33,7 @@
 
 <svelte:window bind:scrollY={yPos} bind:innerWidth={winWidth}/>
 
-<div class="bg-transparent {fullyLoaded == false ? "hidden" : "flex flex-wrap"}">
+<div class="bg-transparent flex flex-wrap">
   <div class="z-[100] block md:hidden header-fade fixed { yPos > 0 && !showDropdown ? "header-gradient" : "bg-transparent"} w-full h-[60px]">
     <div class="z-[100] block md:hidden absolute left-8 top-0"><img alt="Riyo Games Logo" class="w-[50px] h-auto" src={navTabImg}/></div>
     <div on:click={()=>mobileMenu()} class="z-[90] block md:hidden text-charcoal h-[48px] w-[48px] -right-1 fixed hover:cursor-pointer">
@@ -74,8 +53,8 @@
       {/each}
       <div class="py-4 text-center">
         <div class="inline-block">
-          { #each socials as social }
-            <a on:click={()=>mobileMenu()} class="mx-3" href={social[0]}><img alt="Social Media Icon" class="inline-block w-[45px] h-auto" src={social[1]}/></a>
+          { #each data.allSocials as social }
+            <a on:click={()=>mobileMenu()} class="mx-3" href={social.link}><img alt="Social Media Icon" class="inline-block w-[45px] h-auto" src={social.svg.url}/></a>
           {/each}
         </div>
       </div>
@@ -86,15 +65,15 @@
     <div class="absolute right-8">
       { #each pages as page }
         <span class="relative pl-4">
-          <h4 class="inline-block uppercase { navSelected == page[1] ? "text-boxBlue" : "" } hover:text-boxBlue"><a on:click={()=>resetLoaded(page[1])} href="{ page[1] }">{ page[0] }</a></h4>
+          <h4 class="inline-block uppercase { navSelected == page[1] ? "text-boxBlue" : "" } hover:text-boxBlue"><a href="{ page[1] }">{ page[0] }</a></h4>
           { #if navSelected == page[1] }
             <div class="absolute -top-[19px] left-1/2"><img alt="Navigation Selector" class="mx auto w-[70%]" src={navSelectedImg}/></div>
           { /if }
         </span>
       { /each }
       <div class="pl-4 inline-block">
-        { #each socials as social }
-          <a href={social[0]}><img alt="Social Media Icon" class="mx-1 inline-block w-[30px] h-auto" src={social[1]}/></a>
+        { #each data.allSocials as social }
+          <a href={social.link}><img alt="Social Media Icon" class="mx-1 inline-block w-[30px] h-auto" src={social.svg.url}/></a>
         {/each}
       </div>
     </div>
@@ -112,17 +91,15 @@
         <div class="w-full text-left flex flex-wrap items-center">      
           <img alt="Riyo Games Logo" class="mb-0 mt-1 h-[30px]" src={logoImg}/>
           { #if winWidth > 768 }
-            <span class="font-body text-textGray text-tiny pl-2">&#169; Riyo Inc 2022, All Rights Reserved |</span><span class="style-dato-footer">{@html htmlRender( data.article.footerContent ) }</span>   
+            <span class="font-body text-textGray text-tiny pl-2">&#169; Riyo Inc 2022, All Rights Reserved |</span><span class="style-dato-footer">{@html htmlRender( data.footer.footerContent ) }</span>   
           { /if }
         </div>
         { #if winWidth <= 768 }
           <div class="w-full">
-            <span class="py-2 font-body text-textGray text-tiny">&#169; Riyo Inc 2022, All Rights Reserved |</span><span class="style-dato-footer">{@html htmlRender( data.article.footerContent ) }</span>   
+            <span class="py-2 font-body text-textGray text-tiny">&#169; Riyo Inc 2022, All Rights Reserved |</span><span class="style-dato-footer">{@html htmlRender( data.footer.footerContent ) }</span>   
           </div>
         { /if }
       </div>
     </div>
   </div>
-</div>
-<div class="bg-beige absolute top-0 left-0 w-[100vw] h-[100vh] {fullyLoaded == true ? "hidden" : "flex flex-wrap"}">
 </div>

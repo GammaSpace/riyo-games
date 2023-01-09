@@ -4,8 +4,8 @@ const token = PUBLIC_DATO_TOKEN;
 
 /* @type {import('./$types').LayoutServerLoad} */
 export async function load() {
-  return {
-    article: fetch(
+  return (
+    fetch(
       'https://graphql.datocms.com/',
       {
         method: 'POST',
@@ -40,5 +40,5 @@ export async function load() {
     .catch( ( err ) => {
       console.log( err );
     })
-  }
+  )
 }

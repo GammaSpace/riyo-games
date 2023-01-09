@@ -2,7 +2,6 @@
   import { onMount } from 'svelte';
   import { PUBLIC_DATO_TOKEN } from '$env/static/public';
   import { render as htmlRender } from 'datocms-structured-text-to-html-string';
-  import { loaded } from "../../stores";
   import TabardBottom from "../../svg/tabard_bottom.svelte";
   import TabardBody from "../../svg/tabard_body.svelte";
 
@@ -65,7 +64,6 @@
     .then( ( res ) => {
       article = res.data.gamesModel;
       ctas = res.data.allCallToActions;
-      loaded.set( true );
     })
     .catch( ( error ) => {
       console.log( error );

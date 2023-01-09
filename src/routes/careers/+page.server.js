@@ -5,7 +5,7 @@ const token = PUBLIC_DATO_TOKEN;
 /* @type {import('./$types').LayoutServerLoad} */
 export async function load() {
   return {
-    article: fetch(
+    content: fetch(
       'https://graphql.datocms.com/',
       {
         method: 'POST',

@@ -10,6 +10,6 @@
 
 <div class="bg-welcomeBandBg bg-cover bg-center bg-beige p-8 pb-12 flex flex-wrap pt-12">  
   <div class="mb-12 max-w-[900px] w-full text-textGray style-privacy">
-    {@html htmlRender( data.article.content )}
+    {@html htmlRender( data.content )}
   </div>  
 </div>

@@ -1,5 +1,4 @@
 <script>
-  import { PUBLIC_DATO_TOKEN } from '$env/static/public';
   import { render as htmlRender } from 'datocms-structured-text-to-html-string';
   
   export let data;
@@ -38,17 +37,18 @@
     }
     handActive[id][1] = true;
   }
+
+  console.log( data );
 </script>
 
 <svelte:window bind:scrollY={yPos} bind:innerWidth={winWidth}/>
 
-{ #if data.article.title != undefined }
 <div class="bg-welcomeBandBg bg-cover bg-center p-8 pb-12 pt-16 flex flex-wrap pt-12 pb-24 md:pl-[10%]">
   <div class="w-full mt-16 md:w-1/2">
     <img alt="Riyo Games Logo" class="mb-8" src={img.logo} />
     <img alt="Horizontal Rule" class="-mt-12 h-[2px] object-left" src={img.ruleOfLaw}/>
     <div class="pt-8 pb-4 text-textGray style-dato-header">
-      { @html htmlRender( data.article.studioDescription ) }
+      { @html htmlRender( data.studioDescription ) }
     </div>
     <img alt="Horizontal Rule" class="mb-2 h-[2px] object-left" src={img.ruleOfLaw}/>
     <div class="flex flex-wrap justify-center relative">
@@ -83,10 +83,10 @@
   </div>
   <div class="z-10 px-8 text-center w-full py-16 md:py-[16vw] 2xl:py-[15vw] md:w-2/3 xl:w-1/2">
     <div class="text-tan">
-      <div class="text-2xl uppercase">{ @html htmlRender( data.article.missionHeadline ) }</div>
+      <div class="text-2xl uppercase">{ @html htmlRender( data.missionHeadline ) }</div>
     </div>
     <div class="py-4 text-textGray">
-      { @html htmlRender( data.article.additionalDescription ) }
+      { @html htmlRender( data.additionalDescription ) }
     </div>
     <div class="">
       <div class="inline-block p-4">
@@ -105,11 +105,11 @@
   </div>
   <div class="z-10 w-full md:w-1/2 flex flex-wrap">
     <div class="w-full">
-      <h2 class="pb-2">{data.article.gamesHeader}</h2>
-      <h2 class="pb-2 text-4xl">{data.article.gamesSubHeader}</h2>
+      <h2 class="pb-2">{data.gamesHeader}</h2>
+      <h2 class="pb-2 text-4xl">{data.gamesSubHeader}</h2>
       <img alt="Horizontal Rule" class="my-2 h-[1.5px] object-left" src={img.ruleOfLaw}/>
       <div class="pt-2 pb-4 text-textGray style-dato-st">
-        { @html htmlRender( data.article.threadsOfTimeIntro ) }
+        { @html htmlRender( data.threadsOfTimeIntro ) }
       </div>
       <div class="inline-block pb-4">
         <a href="https://www.threadsoftimegame.com"><button class="btn-std hover:bg-beige border-2 border-textGray py-2 px-6 bg-tan text-charcoal uppercase">Learn More</button></a>
@@ -117,5 +117,4 @@
     </div>
   </div>
 </div>
-{ /if }
 

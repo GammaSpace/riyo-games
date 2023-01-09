@@ -25,14 +25,14 @@
 
 <svelte:window bind:scrollY={yPos}/>
 
-{ #if data.article.title != undefined }
+{ #if data.content.title != undefined }
   <div class="bg-careersBandTopBg bg-cover bg-center bg-no-repeat p-8 pb-12 flex flex-wrap pt-12 justify-center">  
     <div class="mt-8 mb-20 w-full md:w-5/6 justify-center items-center flex flex-wrap">
-      <div class="w-full md:w-1/3 xl:w-1/4 mb-4 md:mb-0"><img class="mx-auto" src={img.logo} /></div>
+      <div alt="Riyo Games Logo" class="w-full md:w-1/3 xl:w-1/4 mb-4 md:mb-0"><img class="mx-auto" src={img.logo} /></div>
       <div class="w-full md:w-2/3 xl:w-3/4 pl-0 md:px-16">
         <h1>Careers</h1>
-        <img src={img.divider}/>
-        <div class="text-textGray style-dato-header mt-4">{ @html htmlRender( data.article.description ) }</div>
+        <img alt="Horizontal Rule" src={img.divider}/>
+        <div class="text-textGray style-dato-header mt-4">{ @html htmlRender( data.content.description ) }</div>
       </div>
     </div>
   </div>
@@ -42,17 +42,17 @@
       <div class="bg-careersBandMidBg bg-top bg-tan bg-cover bg-no-repeat absolute w-full h-full"></div>
       <div class="z-10 w-full md:px-0 mt-12 mb-4 md:w-5/6 flex flex-wrap justify-center">
         <div class="w-full lg:w-1/2 md:pr-[7%] pb-4">
-          <h1>{data.article.deiHeader}</h1>
-          <img src={img.divider}/>
+          <h1>{data.content.deiHeader}</h1>
+          <img alt="Horizontal Rule" src={img.divider}/>
           <div class="py-4 text-textGray style-dato-st">
-            { @html htmlRender( data.article.diversityInclusion ) }
+            { @html htmlRender( data.content.diversityInclusion ) }
           </div>
         </div>
         <div class="w-full lg:w-1/2 md:pr-[7%] pb-4">
-          <h1>{data.article.improvementHeader}</h1>
-          <img src={img.divider}/>
+          <h1>{data.content.improvementHeader}</h1>
+          <img alt="Horizontal Rule" src={img.divider}/>
           <div class="py-4 text-textGray style-dato-st">
-            { @html htmlRender( data.article.commitmentToImprovement ) }
+            { @html htmlRender( data.content.commitmentToImprovement ) }
           </div>
         </div>
       </div>

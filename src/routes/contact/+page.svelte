@@ -13,14 +13,14 @@
 
 <svelte:window bind:scrollY={yPos}/>
 
-{ #if data.article.title != undefined }
+{ #if data.title != undefined }
   <div class="bg-careersBandTopBg bg-cover bg-center bg-no-repeat p-8 pb-12 flex flex-wrap pt-12 justify-center">  
     <div class="mt-8 mb-12 w-full md:w-5/6 justify-center items-center flex flex-wrap">
       <div class="w-full md:w-1/3 xl:w-1/4"><img alt="Riyo Games Logo" class="mx-auto" src={img.logo} /></div>
       <div class="w-full md:w-2/3 xl:w-3/4 pl-0 md:px-16">
-        <h1>{data.article.contactHeader}</h1>
+        <h1>{data.contactHeader}</h1>
         <img alt="Horizontal Rule" class="pb-4" src={img.divider}/>
-        <div class="text-textGray style-dato-header">{ @html htmlRender( data.article.description ) }</div>
+        <div class="text-textGray style-dato-header">{ @html htmlRender( data.description ) }</div>
       </div>
     </div>
   </div>
@@ -30,9 +30,9 @@
       <div class="bg-careersBandMidBg bg-cover bg-no-repeat absolute w-full h-full"></div>
       <div class="z-10 w-full md:w-5/6 md:px-0 mt-8 pb-64 mb-4 flex flex-wrap justify-center">
         <div class="w-full md:w-1/2 pr-8">
-          <h1>{data.article.emailHeader}</h1>
-          <p class="text-textGray">{@html htmlRender( data.article.emailContent )}</p>
-          <a href="mailto:contact@riyogames.com" class="underline text-base text-textGray">{data.article.emailContact}</a>
+          <h1>{data.emailHeader}</h1>
+          <p class="text-textGray">{@html htmlRender( data.emailContent )}</p>
+          <a href="mailto:contact@riyogames.com" class="underline text-base text-textGray">{data.emailContact}</a>
           <!--h1>Contact Form</h1>>
           <form name="contact-form" netlify-honeypot="bot-field" method="POST" id="contact" data-netlify="true">
             <input type="hidden" name="form-name" value="contact-form" />
@@ -84,7 +84,7 @@
           </form-->
         </div>
         <div class="w-full md:w-1/2 mt-8 md:mt-0">
-          <h1>{data.article.newsletterHeader}</h1>
+          <h1>{data.newsletterHeader}</h1>
           <form id="signup" method="post" action="https://www.aweber.com/scripts/addlead.pl">
             <input type="hidden" name="listname" value="awlist6157223" />
             <input type="hidden" name="redirect" value="http://www.example.com/thankyou.htm" />
