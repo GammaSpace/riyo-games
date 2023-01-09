@@ -17,7 +17,6 @@
   let yPos = 0;
 
   function toggleJob( id ) {
-    //console.log( posDom[id] );
     posDom[id][0].style.maxHeight = posDom[id][0].style.maxHeight == "100%" ? "0" : "100%";
     posDom[id][1] = posDom[id][0].style.maxHeight == "100%" ? "Read Less" : "Read More";
   }

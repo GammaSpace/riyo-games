@@ -37,8 +37,6 @@
     }
     handActive[id][1] = true;
   }
-
-  console.log( data );
 </script>
 
 <svelte:window bind:scrollY={yPos} bind:innerWidth={winWidth}/>
