@@ -40,7 +40,7 @@ export async function load() {
               careersButton,
               teamHeader
             },
-            allBios {
+            allBios(first: 50) {
               name,
               role
               level,
