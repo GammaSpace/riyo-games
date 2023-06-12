@@ -9,7 +9,7 @@
     ["home","/"],    
     ["about","/about"],
     ["careers","/careers"],
-    ["games","https://www.threadsoftimegame.com"],
+    ["games","https://threadsoftimegame.com"],
     ["contact","/contact"]
   ]
 

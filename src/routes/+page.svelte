@@ -6,7 +6,7 @@
   const homeLinks = [ 
     ["about","/about"],
     ["careers","/careers"],
-    ["games","https://www.threadsoftimegame.com"],
+    ["games","https://threadsoftimegame.com"],
     ["contact","contact"]
   ]
 
@@ -110,7 +110,7 @@
         { @html htmlRender( data.threadsOfTimeIntro ) }
       </div>
       <div class="inline-block pb-4">
-        <a href="https://www.threadsoftimegame.com"><button class="btn-std hover:bg-beige border-2 border-textGray py-2 px-6 bg-tan text-charcoal uppercase">Learn More</button></a>
+        <a href="https://threadsoftimegame.com"><button class="btn-std hover:bg-beige border-2 border-textGray py-2 px-6 bg-tan text-charcoal uppercase">Learn More</button></a>
       </div>
     </div>
   </div>
