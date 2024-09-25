@@ -41,29 +41,31 @@
 			</div>
 		</div>
 	</div>
-	<div class="w-full relative">
-		<div class="bg-careersBandMidBg bg-top bg-tan bg-cover bg-no-repeat absolute w-full h-full" />
-		<div class="relative z-10">
-			<div class="flex flex-wrap p-8 pb-20 justify-center items-center">
-				<div class="w-full md:px-0 mt-12 mb-4 md:w-5/6 flex flex-wrap justify-center">
-					<div class="w-full lg:w-1/2 md:pr-[7%] pb-4">
-						<h1>{data.content.deiHeader}</h1>
-						<img alt="Horizontal Rule" src={img.divider} />
-						<div class="py-4 text-textGray style-dato-st">
-							{@html htmlRender(data.content.diversityInclusion)}
-						</div>
+	<div class="w-full relative flex flex-wrap justify-center items-center">
+		<div class="z-10 w-full top-[-115px] absolute h-[80px] footer-gradient" />
+		<div
+			class="z-20 relative mission-mask flex flex-wrap p-8 pb-20 justify-center items-center -mt-16"
+		>
+			<div class="bg-careersBandMidBg bg-top bg-tan bg-cover bg-no-repeat absolute w-full h-full" />
+			<div class="z-10 w-full md:px-0 mt-12 mb-4 md:w-5/6 flex flex-wrap justify-center">
+				<div class="w-full lg:w-1/2 md:pr-[7%] pb-4">
+					<h1>{data.content.deiHeader}</h1>
+					<img alt="Horizontal Rule" src={img.divider} />
+					<div class="py-4 text-textGray style-dato-st">
+						{@html htmlRender(data.content.diversityInclusion)}
 					</div>
-					<div class="w-full lg:w-1/2 md:pr-[7%] pb-4">
-						<h1>{data.content.improvementHeader}</h1>
-						<img alt="Horizontal Rule" src={img.divider} />
-						<div class="py-4 text-textGray style-dato-st">
-							{@html htmlRender(data.content.commitmentToImprovement)}
-						</div>
+				</div>
+				<div class="w-full lg:w-1/2 md:pr-[7%] pb-4">
+					<h1>{data.content.improvementHeader}</h1>
+					<img alt="Horizontal Rule" src={img.divider} />
+					<div class="py-4 text-textGray style-dato-st">
+						{@html htmlRender(data.content.commitmentToImprovement)}
 					</div>
 				</div>
 			</div>
-			<div class="flex flex-wrap p-8 pb-20 justify-center items-center">
-				<div class="w-full md:px-0 mb-8 md:w-5/6 flex flex-wrap justify-center">
+			<div class="z-20 relative flex flex-wrap p-8 pb-20 justify-center items-center -mt-16">
+				<div class="b bg-top bg-cover bg-no-repeat absolute w-full h-full" />
+				<div class="z-10 w-full md:px-0 mb-8 md:w-5/6 flex flex-wrap justify-center ">
 					<div class="w-full">
 						<h1 class="inline-block pr-3">Open Positions</h1>
 						<h1 class="inline-block text-boxBlue">

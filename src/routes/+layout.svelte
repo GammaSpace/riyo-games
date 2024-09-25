@@ -132,7 +132,7 @@
 	/>
 
 	<!-- Main Content -->
-	<div class="w-full min-h-screen">
+	<div class="w-full">
 		<slot />
 	</div>
 
