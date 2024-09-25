@@ -88,7 +88,7 @@
 
 	<!-- Desktop Header with Navigation (Overlay) -->
 	<div class="hidden md:block fixed z-50 w-full max-w-10xl mx-auto left-1/2 -translate-x-1/2 top-0">
-		<div class="flex justify-between items-center pl-12">
+		<div class="flex justify-between items-center pl-12 pr-4">
 			<div class="flex items-center">
 				<img alt="Riyo Games Logo" class="w-[50px] h-auto" src={navTabImg} />
 			</div>
@@ -109,12 +109,12 @@
 						{/if}
 					</span>
 				{/each}
-				<div class="pl-4 inline-block">
+				<div class="pl-4 inline-block space-x-2">
 					{#each data.allSocials as social}
 						<a href={social.link}
 							><img
 								alt="Social Media Icon"
-								class="mx-1 inline-block w-[30px] h-auto"
+								class="mx-1 inline-block h-[24px]"
 								src={social.svg.url}
 							/></a
 						>
@@ -139,7 +139,7 @@
 	<!-- Footer -->
 	<div class="w-full relative">
 		{#if navSelected != '/about' && navSelected != '/games'}
-			<div class="z-20 w-full bottom-[90px] absolute h-[80px] footer-gradient" />
+			<div class="z-20 w-full bottom-[90px] absolute h-[80px] footer-" />
 		{/if}
 		<div class="z-30 mission-mask w-full h-[100px] flex flex-wrap items-center relative -mt-8">
 			<div class="absolute bg-tan bg-center md:bg-cover bg-no-repeat w-full h-full" />
