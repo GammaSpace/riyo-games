@@ -3,235 +3,253 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Volkhov";
-  src: url("./fonts/volkhov/volkhov-regular-webfont.woff");
-  src: url("./fonts/volkhov/volkhov-regular-webfont.woff2");
+	font-family: 'Volkhov';
+	src: url('./fonts/volkhov/volkhov-regular-webfont.woff');
+	src: url('./fonts/volkhov/volkhov-regular-webfont.woff2');
 }
 
 @font-face {
-  font-family: "Volkhov";
-  src: url("./fonts/volkhov/volkhov-bold-webfont.woff");
-  src: url("./fonts/volkhov/volkhov-bold-webfont.woff2");
-  font-weight: bold;
+	font-family: 'Volkhov';
+	src: url('./fonts/volkhov/volkhov-bold-webfont.woff');
+	src: url('./fonts/volkhov/volkhov-bold-webfont.woff2');
+	font-weight: bold;
 }
 
 @font-face {
-  font-family: "Volkhov";
-  src: url("./fonts/volkhov/volkhov-italic-webfont.woff");
-  src: url("./fonts/volkhov/volkhov-italic-webfont.woff2");
-  font-style: italic;
+	font-family: 'Volkhov';
+	src: url('./fonts/volkhov/volkhov-italic-webfont.woff');
+	src: url('./fonts/volkhov/volkhov-italic-webfont.woff2');
+	font-style: italic;
 }
 
 @font-face {
-  font-family: "Volkhov";
-  src: url("./fonts/volkhov/volkhov-bolditalic-webfont.woff");
-  src: url("./fonts/volkhov/volkhov-bolditalic-webfont.woff2");
-  font-weight: bold;
-  font-style: italic;
+	font-family: 'Volkhov';
+	src: url('./fonts/volkhov/volkhov-bolditalic-webfont.woff');
+	src: url('./fonts/volkhov/volkhov-bolditalic-webfont.woff2');
+	font-weight: bold;
+	font-style: italic;
 }
 
 @font-face {
-  font-family: "Quadraat";
-  src: url("./fonts/quadraat/quadraatoffcpro-webfont.woff");
-  src: url("./fonts/quadraat/quadraatoffcpro-webfont.woff2");
+	font-family: 'Quadraat';
+	src: url('./fonts/quadraat/quadraatoffcpro-webfont.woff');
+	src: url('./fonts/quadraat/quadraatoffcpro-webfont.woff2');
 }
 
 @font-face {
-  font-family: "Quadraat";
-  src: url("./fonts/quadraat/quadraatoffcpro-bold-webfont.woff");
-  src: url("./fonts/quadraat/quadraatoffcpro-bold-webfont.woff2");
-  font-weight: bold;
+	font-family: 'Quadraat';
+	src: url('./fonts/quadraat/quadraatoffcpro-bold-webfont.woff');
+	src: url('./fonts/quadraat/quadraatoffcpro-bold-webfont.woff2');
+	font-weight: bold;
 }
 
 @font-face {
-  font-family: "Quadraat";
-  src: url("./fonts/quadraat/quadraatoffcpro-italic-webfont.woff");
-  src: url("./fonts/quadraat/quadraatoffcpro-italic-webfont.woff2");
-  font-style: italic;
+	font-family: 'Quadraat';
+	src: url('./fonts/quadraat/quadraatoffcpro-italic-webfont.woff');
+	src: url('./fonts/quadraat/quadraatoffcpro-italic-webfont.woff2');
+	font-style: italic;
 }
 
 body {
-  @apply bg-tan;
+	@apply bg-stone-800;
 }
 
-h1, h2, h3 {
-  @apply font-menu uppercase;
+h1,
+h2,
+h3 {
+	@apply font-menu uppercase;
 }
 
 h1 {
-  @apply text-3xl my-4;
+	@apply text-3xl my-4;
 }
 
 hr {
-  @apply border-textGray
+	@apply border-textGray;
 }
 
-p, a {
-  @apply font-body text-sm leading-6 mb-4;
+p,
+a {
+	@apply font-body text-sm leading-6 mb-4;
 }
 
 .header-fade {
-  transition: background-color 0.1s linear;
+	transition: background-color 0.1s linear;
 }
 
 .mission-mask {
-  -webkit-mask-image: url("/img/home/about_band_mask_narrow.svg");
-  mask-image: url("/img/home/about_band_mask_narrow.svg");
-  mask-mode: luminance;
-  -webkit-mask-mode: luminance;
-  mask-repeat: repeat-x;
-  -webkit-mask-repeat: repeat-x;
-  mask-size: cover;
-  -webkit-mask-size: cover;
+	-webkit-mask-image: url('/img/home/about_band_mask_narrow.svg');
+	mask-image: url('/img/home/about_band_mask_narrow.svg');
+	mask-mode: luminance;
+	-webkit-mask-mode: luminance;
+	mask-repeat: repeat-x;
+	-webkit-mask-repeat: repeat-x;
+	mask-size: cover;
+	-webkit-mask-size: cover;
 }
 
 .footer-mask {
-  -webkit-mask-image: url("/img/home/footer_mask.svg");
-  mask-image: url("/img/home/footer_mask.svg");
-  mask-mode: luminance;
-  -webkit-mask-mode: luminance;
-  mask-repeat: repeat-x;
-  -webkit-mask-repeat: repeat-x;
-  mask-size: cover;
-  -webkit-mask-size: cover;
+	-webkit-mask-image: url('/img/home/footer_mask.svg');
+	mask-image: url('/img/home/footer_mask.svg');
+	mask-mode: luminance;
+	-webkit-mask-mode: luminance;
+	mask-repeat: repeat-x;
+	-webkit-mask-repeat: repeat-x;
+	mask-size: cover;
+	-webkit-mask-size: cover;
 }
 
 .circle-mask {
-  -webkit-mask-image: linear-gradient( 180deg, transparent, black, black, black, black, transparent);
-  mask-image: linear-gradient( 180deg, transparent, black, black, black, black, transparent);
-  mask-size: cover;
-  -webkit-mask-size: cover;
-  mask-mode: alpha;
-  -webkit-mask-mode: alpha;
+	-webkit-mask-image: linear-gradient(180deg, transparent, black, black, black, black, transparent);
+	mask-image: linear-gradient(180deg, transparent, black, black, black, black, transparent);
+	mask-size: cover;
+	-webkit-mask-size: cover;
+	mask-mode: alpha;
+	-webkit-mask-mode: alpha;
 }
 
 .header-gradient {
-  background-image: linear-gradient( 180deg, rgba( 230, 230, 210, 1 ) 0%, rgba( 227, 215, 187, 1 ) 75%, rgba( 227, 215, 187, 0 ) 100% );
+	background-image: linear-gradient(
+		180deg,
+		rgba(230, 230, 210, 1) 0%,
+		rgba(227, 215, 187, 1) 75%,
+		rgba(227, 215, 187, 0) 100%
+	);
 }
 
 .btn-std {
-  @apply uppercase font-menu;
+	@apply uppercase font-menu;
 }
 
 .toggle-job {
-  /*transition: max-height 0.25s linear;*/
+	/*transition: max-height 0.25s linear;*/
 }
 
-.mickey-bounce { 
-  -webkit-animation: mickey-bounce 0.5s; 
-  animation: mickey-bounce 0.5s; 
-  animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
+.mickey-bounce {
+	-webkit-animation: mickey-bounce 0.5s;
+	animation: mickey-bounce 0.5s;
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
 }
 
-@-webkit-keyframes mickey-bounce { 
-  50% {-webkit-transform: translateX(-20px);} 
-  100% {-webkit-transform: translateX(0px);} 
-} 
+@-webkit-keyframes mickey-bounce {
+	50% {
+		-webkit-transform: translateX(-20px);
+	}
+	100% {
+		-webkit-transform: translateX(0px);
+	}
+}
 
-@keyframes mickey-bounce { 
-  50% {transform: translateX(-20px);} 
-  100% {transform: translateX(0px);} 
+@keyframes mickey-bounce {
+	50% {
+		transform: translateX(-20px);
+	}
+	100% {
+		transform: translateX(0px);
+	}
 }
 
 .style-dato-st h3 {
-  @apply text-charcoal text-xl mb-4
+	@apply text-charcoal text-xl mb-4;
 }
 
-.style-dato-st p, .style-dato-st a {
-  @apply mb-4 leading-6 text-sm;
+.style-dato-st p,
+.style-dato-st a {
+	@apply mb-4 leading-6 text-sm;
 }
 
-.style-dato-st a  {
-  @apply underline;
+.style-dato-st a {
+	@apply underline;
 }
 
 .style-dato-st h4 {
-  @apply text-charcoal font-menu text-lg mb-1  
+	@apply text-charcoal font-menu text-lg mb-1;
 }
 
 .style-dato-st ul {
-  @apply list-disc text-textGray pl-8;  
+	@apply list-disc text-textGray pl-8;
 }
 
 .style-dato-st ul p {
-  @apply mb-2;
+	@apply mb-2;
 }
 
-.style-dato-header p, .style-dato-header a {
-  @apply text-md;
+.style-dato-header p,
+.style-dato-header a {
+	@apply text-md;
 }
 
 .style-dato-header a {
-  @apply underline 
+	@apply underline;
 }
 
 .style-job p {
-  @apply font-body text-sm leading-6 ;
+	@apply font-body text-sm leading-6;
 }
 
 .style-job ul {
-  @apply text-textGray;  
+	@apply text-textGray;
 }
 
 .style-job li {
-  @apply font-body text-sm leading-8;
+	@apply font-body text-sm leading-8;
 }
 
-.style-job li::before{
-  content: '\ffed';  
-  @apply text-textGray pr-2;
+.style-job li::before {
+	content: '\ffed';
+	@apply text-textGray pr-2;
 }
 
 .style-privacy p {
-  @apply mb-4 leading-6;
+	@apply mb-4 leading-6;
 }
 
 .style-privacy h2 {
-  @apply my-4 text-lg text-charcoal;
+	@apply my-4 text-lg text-charcoal;
 }
 
 .style-privacy h3 {
-  @apply my-4 text-base text-charcoal;
+	@apply my-4 text-base text-charcoal;
 }
 
 .style-privacy li {
-  @apply font-body text-sm ml-8 list-disc leading-5;  
+	@apply font-body text-sm ml-8 list-disc leading-5;
 }
 
 .style-privacy a {
-  @apply underline hover:cursor-pointer;
+	@apply underline hover:cursor-pointer;
 }
 
-.cls-1{
-  @apply fill-midBeige;
-} 
+.cls-1 {
+	@apply fill-midBeige;
+}
 
 .cls-2 {
-  @apply fill-[#7b6b48];
+	@apply fill-[#7b6b48];
 }
 
 .homepage-menu:before {
-  @apply pr-2;
-  content: "\2B29";
+	@apply pr-2;
+	content: '\2B29';
 }
 
 .footer-gradient {
-  background-image: linear-gradient( 0deg, rgba( 179,167,139, 0.8 ), rgba( 179,167,139, 0 ) );
+	background-image: linear-gradient(0deg, rgba(179, 167, 139, 0.8), rgba(179, 167, 139, 0));
 }
 
 .job-shadow {
-  box-shadow: 4px 4px 8px #e3d7bb;
+	box-shadow: 4px 4px 8px #e3d7bb;
 }
 
 .style-dato-footer {
-  @apply text-tiny font-body text-textGray text-tiny pl-1 mb-0; 
+	@apply text-tiny font-body text-textGray text-tiny pl-1 mb-0;
 }
 
 .style-dato-footer p {
-  @apply text-tiny font-body text-textGray text-tiny mb-0;
+	@apply text-tiny font-body text-textGray text-tiny mb-0;
 }
 
 .style-dato-footer a {
-  @apply text-tiny underline;
+	@apply text-tiny underline;
 }
