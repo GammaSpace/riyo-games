@@ -4,7 +4,7 @@
   import { render as htmlRender } from 'datocms-structured-text-to-html-string';
 
   export let data;
-  
+  const currentYear = new Date().getFullYear();
   const pages = [
     ["home","/"],    
     ["about","/about"],
@@ -91,12 +91,12 @@
         <div class="w-full text-left flex flex-wrap items-center">      
           <img alt="Riyo Games Logo" class="mb-0 mt-1 h-[30px]" src={logoImg}/>
           { #if winWidth > 768 }
-            <span class="font-body text-textGray text-tiny pl-2">&#169; Riyo Inc 2022, All Rights Reserved |</span><span class="style-dato-footer">{@html htmlRender( data.footer.footerContent ) }</span>   
+            <span class="font-body text-textGray text-tiny pl-2">&#169; Riyo Inc {currentYear}, All Rights Reserved |</span><span class="style-dato-footer">{@html htmlRender( data.footer.footerContent ) }</span>   
           { /if }
         </div>
         { #if winWidth <= 768 }
           <div class="w-full">
-            <span class="py-2 font-body text-textGray text-tiny">&#169; Riyo Inc 2022, All Rights Reserved |</span><span class="style-dato-footer">{@html htmlRender( data.footer.footerContent ) }</span>   
+            <span class="py-2 font-body text-textGray text-tiny">&#169; Riyo Inc {currentYear}, All Rights Reserved |</span><span class="style-dato-footer">{@html htmlRender( data.footer.footerContent ) }</span>   
           </div>
         { /if }
       </div>

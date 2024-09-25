@@ -1,9 +1,6 @@
 import { PUBLIC_DATO_TOKEN } from '$env/static/public';
-
 export const prerender = true;
-
 const token = PUBLIC_DATO_TOKEN;
-
 /* @type {import('./$types').LayoutServerLoad} */
 export async function load() {
 
