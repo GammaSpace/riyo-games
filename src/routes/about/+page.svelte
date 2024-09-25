@@ -10,6 +10,7 @@
 		timeRule: '/img/ui/time_rule.png',
 		timeRuleBeige: '/img/ui/time_rule_beige.png',
 		ruleOfLaw: '/img/ui/rule_of_law.png',
+		staffDivider: '/img/ui/staff_divider.png',
 		logo: '/img/logos/riyo_games_logo_586x288.png',
 		mickey: '/img/ui/nav_mickey_hand.png',
 		bio: {
@@ -134,7 +135,7 @@
 					<div class="w-2/3 md:w-1/2 font-menu">
 						<h2 class="text-xl">{bio.name}</h2>
 						<h2 class="text-blue-400 pb-1">{bio.role}</h2>
-						<img alt="Horizontal Rule" class="w-[75%] h-[1.5px]" src={img.ruleOfLaw} />
+						<img alt="Horizontal Rule" class="w-[75%] h-[1.5px]" src={img.staffDivider} />
 					</div>
 				</div>
 			{/each}
